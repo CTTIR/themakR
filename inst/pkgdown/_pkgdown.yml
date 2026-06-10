@@ -48,7 +48,7 @@ home:
       rouniverse:
         title: R-universe
         text: >
-          Browse the [CTTIR universe](https://cttir.r-universe.dev/)
+          Browse the [CTTIR universe](https://cttir.github.io/website/)
           for installable builds of this package and the rest of the suite.
 
 footer:
