@@ -9,8 +9,8 @@ Description: Provides a custom pkgdown template that gives the r-heller family o
     styling, light and dark colour modes, and consistent navbar, hex, and footer
     treatment. Not intended for general use outside the r-heller suite.
 License: MIT + file LICENSE
-URL: https://github.com/r-heller/themakR, https://r-heller.github.io/themakR/
-BugReports: https://github.com/r-heller/themakR/issues
+URL: https://github.com/CTTIR/themakR, https://cttir.github.io/themakR/
+BugReports: https://github.com/CTTIR/themakR/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Depends:
@@ -22,5 +22,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-Config/Needs/website: r-heller/themakR
+Config/Needs/website: CTTIR/themakR
 Config/roxygen2/version: 8.0.0

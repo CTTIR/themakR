@@ -5,7 +5,7 @@ here affect the documentation site of every package in the family.
 
 ## Reporting problems
 
-Please open an issue at <https://github.com/r-heller/themakR/issues>. A
+Please open an issue at <https://github.com/CTTIR/themakR/issues>. A
 screenshot in **both light and dark mode** plus the consuming package's
 `_pkgdown.yml` makes theme bugs much easier to reproduce.
 
