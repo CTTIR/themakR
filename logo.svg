@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181 209" width="181" height="209" role="img" aria-label="themakR hex logo">
+  <!-- pointy-top hexagon, suite style: dark fill, purple border -->
+  <polygon points="90.5,4.6 177,54.55 177,154.45 90.5,204.4 4,154.45 4,54.55"
+           fill="#181023" stroke="#5E2C8E" stroke-width="7" stroke-linejoin="miter"/>
+  <!-- faint inner edge for depth -->
+  <polygon points="90.5,14 168.9,59.2 168.9,149.8 90.5,195 12.1,149.8 12.1,59.2"
+           fill="none" stroke="#5E2C8E" stroke-opacity="0.25" stroke-width="1"/>
+  <g font-family="JetBrains Mono, Consolas, Menlo, monospace" text-anchor="middle">
+    <text x="90.5" y="100" font-size="13" fill="#6F5A8C">&gt;_</text>
+    <text x="90.5" y="122" font-size="24" font-weight="700">
+      <tspan fill="#9D71C7">{</tspan><tspan fill="#EDE7F8">themakR</tspan><tspan fill="#9D71C7">}</tspan>
+    </text>
+    <text x="90.5" y="146" font-size="10" letter-spacing="1.5" fill="#6F5A8C">r-heller</text>
+  </g>
+</svg>
