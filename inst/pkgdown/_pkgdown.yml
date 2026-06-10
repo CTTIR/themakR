@@ -1,0 +1,57 @@
+# Shared template configuration for the r-heller suite.
+# Consumers inherit everything here via `template: package: themakR`;
+# anything they set in their own _pkgdown.yml is merged over these values.
+#
+# Palette: Hugo Coder (luizdepra/hugo-coder), the theme used on
+# r-heller.github.io. Light values are set through bslib below; dark-mode
+# values live in inst/pkgdown/extra.scss under [data-bs-theme="dark"].
+template:
+  bootstrap: 5
+  light-switch: true            # native far-right light/dark/auto toggle (rotemplate-style)
+  theme: github-light           # code syntax highlighting, light mode
+  theme-dark: github-dark       # code syntax highlighting, dark mode
+  math-rendering: katex
+  bslib:
+    base_font: { google: "Inter" }
+    heading_font: { google: "Inter" }
+    code_font: { google: "JetBrains Mono" }
+    bg: "#fafafa"               # Hugo Coder light background
+    fg: "#212121"               # Hugo Coder light text
+    primary: "#1565c0"          # Hugo Coder light link — change to "#5E2C8E" to revert to suite purple
+    border-radius: "0.375rem"
+    # Flat, coder-style navbar: same as the page background in each mode.
+    # pkgdown-navbar-bg(-dark) are pkgdown's own !default SASS hooks for the BS5 navbar.
+    pkgdown-navbar-bg: "#fafafa"
+    pkgdown-navbar-bg-dark: "#212121"
+  includes:
+    in_header: |
+      <meta name="theme-color" content="#1565c0">
+
+# rotemplate-style top bar: brand + hex far left, everything else in a
+# right-aligned cluster ending with the light switch. pkgdown's built-in news
+# component is already labelled "Changelog" and only renders when the package
+# has a NEWS.md, so it needs no override here.
+navbar:
+  structure:
+    left:  []
+    right: [search, reference, articles, news, github, lightswitch]
+
+# rotemplate-style home/reference sidebar. Sections with unmet prerequisites
+# (CONTRIBUTING.md for community, inst/CITATION for citation) simply don't
+# render for that package. The R-universe section links to the suite universe
+# rather than a per-package badge: pkgdown performs no name substitution in
+# custom components, so a per-package URL cannot live in shared config.
+home:
+  sidebar:
+    structure: [links, license, community, citation, authors, rouniverse]
+    components:
+      rouniverse:
+        title: R-universe
+        text: >
+          Browse the [r-heller universe](https://r-heller.r-universe.dev/)
+          for installable builds of this package and the rest of the suite.
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with

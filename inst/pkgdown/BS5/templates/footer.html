@@ -1,0 +1,13 @@
+{{#footer}}
+<div class="pkgdown-footer-left">
+  {{#left}}{{{.}}}{{/left}}
+</div>
+
+<div class="pkgdown-footer-center themakr-footer-suite">
+  <p><span class="themakr-footer-pkg">{{#package}}{{name}}{{/package}}</span> is part of {{#yaml}}{{#part_of}}{{{part_of}}}{{/part_of}}{{^part_of}}the <a href="https://r-heller.github.io/">r-heller</a> suite{{/part_of}}{{/yaml}} &middot; <a href="https://github.com/r-heller">GitHub</a></p>
+</div>
+
+<div class="pkgdown-footer-right">
+  {{#right}}{{{.}}}{{/right}}
+</div>
+{{/footer}}

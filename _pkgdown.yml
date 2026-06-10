@@ -1,0 +1,22 @@
+url: https://r-heller.github.io/themakR/
+
+template:
+  package: themakR        # self-hosting: themakR's site is themed by itself
+
+development:
+  mode: auto
+
+reference:
+- title: Demo content
+  desc: >
+    Placeholder reference content so the template can render a preview of
+    itself. Not part of the theming API.
+  contents:
+  - tk_demo
+
+articles:
+- title: Using themakR
+  navbar: ~
+  contents:
+  - themakR
+  - showcase

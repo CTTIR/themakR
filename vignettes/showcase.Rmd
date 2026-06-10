@@ -1,0 +1,97 @@
+---
+title: "Element showcase"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Element showcase}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 4.5,
+  dpi = 96,
+  warning = FALSE,
+  message = FALSE
+)
+has_ggplot2 <- requireNamespace("ggplot2", quietly = TRUE)
+```
+
+This page renders one of every styled element so the theme can be checked
+visually in both light and dark mode. Use the toggle at the top right.
+
+## Heading level two
+
+Body copy set in Inter. Here is a [link to the r-heller site](https://r-heller.github.io/),
+some **bold text**, some *italic text*, and inline code such as
+`pkgdown::build_site()` or `x <- c(1, 2, 3)` set in JetBrains Mono.
+
+### Heading level three
+
+#### Heading level four
+
+## Code
+
+A fenced, evaluated R chunk with output:
+
+```{r demo-code}
+fib <- function(n) {
+  if (n < 2) return(n)
+  fib(n - 1) + fib(n - 2)
+}
+vapply(0:10, fib, numeric(1))
+```
+
+And a static YAML block:
+
+```yaml
+template:
+  package: themakR
+  bslib:
+    primary: "#1565c0"
+```
+
+## Table
+
+```{r demo-table, echo = FALSE}
+knitr::kable(
+  head(mtcars[, 1:6]),
+  caption = "The first rows of mtcars."
+)
+```
+
+## Blockquote
+
+> The accent is restrained: it colours links, active navigation, focus rings,
+> and the hex border — never large fills.
+
+## Lists
+
+1. An ordered item
+2. Another ordered item
+
+- An unordered item with `inline code`
+- Another unordered item
+
+## Figure
+
+```{r demo-plot, eval = has_ggplot2, echo = has_ggplot2}
+library(ggplot2)
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(colour = "#1565c0", alpha = 0.7) +
+  geom_smooth(method = "loess", formula = y ~ x, colour = "#212121") +
+  labs(
+    title = "Engine displacement vs. highway mileage",
+    x = "Displacement (litres)", y = "Highway miles per gallon"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Math
+
+KaTeX rendering: when $a \ne 0$, the roots of $ax^2 + bx + c = 0$ are
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
