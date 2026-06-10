@@ -4,27 +4,27 @@
 \name{themakR-package}
 \alias{themakR}
 \alias{themakR-package}
-\title{themakR: pkgdown Theme for the r-heller Package Suite}
+\title{themakR: pkgdown Theme for the CTTIR Package Suite}
 \description{
 \if{html}{\figure{logo.svg}{options: style='float: right' alt='logo' width='120'}}
 
-Provides a custom pkgdown template that gives the r-heller family of R packages a shared visual identity: a single purple accent, monospace code styling, light and dark colour modes, and consistent navbar, hex, and footer treatment. Not intended for general use outside the r-heller suite.
+Provides a custom pkgdown template that gives the CTTIR family of R packages a shared visual identity: a single purple accent, monospace code styling, light and dark colour modes, and consistent navbar, hex, and footer treatment. Not intended for general use outside the CTTIR suite.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/r-heller/themakR}
-  \item \url{https://r-heller.github.io/themakR/}
-  \item Report bugs at \url{https://github.com/r-heller/themakR/issues}
+  \item \url{https://github.com/CTTIR/themakR}
+  \item \url{https://cttir.github.io/themakR/}
+  \item Report bugs at \url{https://github.com/CTTIR/themakR/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Raban Heller \email{raban.heller@charite.de} (\href{https://orcid.org/0000-0001-8006-9742}{ORCID})
+\strong{Maintainer}: R. Heller \email{raban.heller@charite.de} (\href{https://orcid.org/0000-0001-8006-9742}{ORCID})
 
 Authors:
 \itemize{
-  \item Raban Heller \email{raban.heller@charite.de} (\href{https://orcid.org/0000-0001-8006-9742}{ORCID})
+  \item R. Heller \email{raban.heller@charite.de} (\href{https://orcid.org/0000-0001-8006-9742}{ORCID})
 }
 
 }

@@ -1,4 +1,4 @@
-# Shared template configuration for the r-heller suite.
+# Shared template configuration for the CTTIR suite.
 # Consumers inherit everything here via `template: package: themakR`;
 # anything they set in their own _pkgdown.yml is merged over these values.
 #
@@ -48,7 +48,7 @@ home:
       rouniverse:
         title: R-universe
         text: >
-          Browse the [r-heller universe](https://cttir.r-universe.dev/)
+          Browse the [CTTIR universe](https://cttir.r-universe.dev/)
           for installable builds of this package and the rest of the suite.
 
 footer:

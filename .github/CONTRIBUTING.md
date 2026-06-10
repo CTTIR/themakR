@@ -1,6 +1,6 @@
 # Contributing to themakR
 
-themakR is the pkgdown template for the r-heller package suite, so changes
+themakR is the pkgdown template for the CTTIR package suite, so changes
 here affect the documentation site of every package in the family.
 
 ## Reporting problems
