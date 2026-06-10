@@ -1,0 +1,156 @@
+// themakR — shared visual identity for r-heller pkgdown sites.
+//
+// Compiled into the bslib theme bundle after Bootstrap and pkgdown's own
+// SCSS, so Bootstrap variables ($primary, $font-family-monospace, ...) and
+// mixins are available. Rules that derive from $primary automatically follow
+// a consumer's per-package accent override.
+//
+// Palette: Hugo Coder. Light mode is configured through bslib variables in
+// _pkgdown.yml; the dark mode below drives Bootstrap 5.3 colour-mode CSS
+// variables under [data-bs-theme="dark"].
+
+// ---------------------------------------------------------------------------
+// Hugo Coder — light mode
+// ---------------------------------------------------------------------------
+
+// bslib derives body colour as a 90/10 mix of fg and bg (#373737); Hugo Coder
+// text is exactly #212121.
+:root,
+[data-bs-theme="light"] {
+  --bs-body-color: #212121;
+  --bs-body-color-rgb: 33, 33, 33;
+  --bs-secondary-color: rgba(33, 33, 33, 0.75);
+}
+
+// ---------------------------------------------------------------------------
+// Hugo Coder — dark mode
+// ---------------------------------------------------------------------------
+
+// The -rgb companions must be re-declared here: the light :root block above
+// outranks Bootstrap's own [data-bs-theme="dark"] variables in bundle order,
+// so any pair set above would otherwise leak its light value into dark mode.
+[data-bs-theme="dark"] {
+  --bs-body-bg: #212121;
+  --bs-body-bg-rgb: 33, 33, 33;
+  --bs-body-color: #dadada;
+  --bs-body-color-rgb: 218, 218, 218;
+  --bs-secondary-color: rgba(218, 218, 218, 0.75);
+  --bs-link-color: #42a5f5;
+  --bs-link-hover-color: #6fb6f7;
+  --bs-link-color-rgb: 66, 165, 245;
+  --bs-link-hover-color-rgb: 111, 182, 247;
+  --bs-emphasis-color: #ffffff;
+  --bs-heading-color: #ffffff;        // Hugo Coder dark headings are pure white
+  --bs-border-color: #4f4f4f;
+  --bs-secondary-bg: #2b2b2b;         // panels / sidebar surfaces
+  --bs-tertiary-bg: #4f4f4f;
+}
+
+// ---------------------------------------------------------------------------
+// Navbar & brand (hex far left, rotemplate-style; flat coder bar)
+// ---------------------------------------------------------------------------
+
+.navbar {
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.navbar > .container {
+  align-items: center;
+}
+
+.navbar-brand {
+  font-family: $font-family-monospace;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+img.themakr-navbar-logo {
+  height: 48px;
+  width: auto;
+}
+
+@include media-breakpoint-down(sm) {
+  img.themakr-navbar-logo {
+    height: 36px;
+  }
+}
+
+// Active nav item picks up the accent, kept as a quiet tint rather than a fill.
+.nav-item.active .nav-link {
+  color: var(--bs-primary);
+  background: rgba($primary, 0.08);
+}
+
+[data-bs-theme="dark"] .nav-item.active .nav-link {
+  color: var(--bs-link-color);
+  background: rgba(tint-color($primary, 30%), 0.15);
+}
+
+// ---------------------------------------------------------------------------
+// Code (Hugo Coder alt backgrounds: #e9e9e9 light, #2b2b2b dark)
+// ---------------------------------------------------------------------------
+
+// `body` in the selectors outranks the highlight themes' own pre backgrounds
+// (github-dark ships #24292e), which land after extra.scss in the bundle.
+body pre {
+  background-color: #e9e9e9;
+}
+
+[data-bs-theme="dark"] body pre {
+  background-color: #2b2b2b;
+}
+
+// Inline code: body-coloured text on the alt background; matches code blocks.
+:not(pre) > code {
+  color: var(--bs-body-color);
+  background-color: #e9e9e9;
+  padding: 0.125rem 0.3125rem;
+  border-radius: $border-radius-sm;
+}
+
+[data-bs-theme="dark"] :not(pre) > code {
+  background-color: #2b2b2b;
+}
+
+// ---------------------------------------------------------------------------
+// Tables
+// ---------------------------------------------------------------------------
+
+table thead th {
+  font-family: $font-family-monospace;
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
+// ---------------------------------------------------------------------------
+// Blockquotes
+// ---------------------------------------------------------------------------
+
+blockquote {
+  border-left: 3px solid rgba($primary, 0.5);
+  padding: 0.25rem 0 0.25rem 1rem;
+  color: var(--bs-secondary-color);
+}
+
+[data-bs-theme="dark"] blockquote {
+  border-left-color: rgba(tint-color($primary, 35%), 0.6);
+}
+
+// ---------------------------------------------------------------------------
+// Footer (suite line injected by the footer.html template override)
+// ---------------------------------------------------------------------------
+
+.themakr-footer-suite {
+  text-align: center;
+  font-family: $font-family-monospace;
+  font-size: 0.8125rem;
+}
+
+.themakr-footer-pkg {
+  font-weight: 600;
+}

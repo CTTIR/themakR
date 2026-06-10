@@ -1,0 +1,9 @@
+^_pkgdown\.ya?ml$
+^docs$
+^pkgdown$
+^README\.Rmd$
+^\.github$
+^LICENSE\.md$
+^themakR\.svg$
+^\.Rproj\.user$
+^\.remember$

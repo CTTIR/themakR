@@ -1,0 +1,120 @@
+---
+title: "Adopting themakR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Adopting themakR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+themakR is the pkgdown template for the r-heller package suite. It gives every
+package the same look — the Hugo Coder palette used on
+[r-heller.github.io](https://r-heller.github.io/) with light and dark modes,
+Inter body text, JetBrains Mono code, a light/dark/auto toggle, the hex
+top-left in the navbar, the rotemplate-style navigation and sidebar, and a
+shared suite footer — with two lines of configuration. This vignette is the
+complete adoption guide.
+
+## 1. Declare the website dependency
+
+Add this line to your package's `DESCRIPTION`, so the pkgdown GitHub Action
+installs themakR before building your site:
+
+```
+Config/Needs/website: r-heller/themakR
+```
+
+## 2. Point your site at the template
+
+Add this to your package's `_pkgdown.yml`:
+
+```yaml
+template:
+  package: themakR
+development:
+  mode: auto
+```
+
+That is the whole theme configuration. Colours and colour modes, fonts,
+syntax-highlighting themes, the navbar layout (brand far left; Search,
+Reference, Articles, Changelog, GitHub, and the light switch grouped on the
+right), and the home sidebar are all inherited from themakR.
+
+## 3. Provide your hex
+
+Make sure your package has its hex sticker at `man/figures/logo.png` (an
+additional `man/figures/logo.svg` is even better — it stays sharp at any
+size). The template places it top-left in the navbar automatically and sizes
+it for you. No configuration needed.
+
+## 4. Sidebar prerequisites checklist
+
+The home page sidebar renders these sections, in order:
+**Links · License · Community · Citation · Developers · R-universe**.
+Each section only appears when its source material exists, so check:
+
+- [ ] `URL` and `BugReports` in `DESCRIPTION` → **Links**
+- [ ] `LICENSE` + `LICENSE.md` → **License**
+- [ ] `.github/CONTRIBUTING.md` (or root `CONTRIBUTING.md`) → **Community**
+- [ ] `inst/CITATION` (must run cleanly through `citation()`) → **Citation**
+- [ ] `aut`/`cre` in `Authors@R`, ideally with ORCID → **Developers**
+
+A missing file simply hides its section — that is expected, not a bug. The
+R-universe section is shared config and always renders; if your package
+should not point there, drop it in your own `_pkgdown.yml`:
+
+```yaml
+home:
+  sidebar:
+    structure: [links, license, community, citation, authors]
+```
+
+## 5. Build
+
+```r
+# install the template locally first, if you haven't:
+# pak::pak("r-heller/themakR")
+pkgdown::build_site()
+```
+
+The light/dark/auto toggle, the house styling, and the footer appear with no
+further configuration.
+
+## Per-package accent override
+
+Each package may keep its own distinct accent (for example, the border colour
+of its hex) while sharing everything else. Set bslib's `primary` in *your*
+`_pkgdown.yml`:
+
+```yaml
+template:
+  package: themakR
+  bslib:
+    primary: "#5E2C8E"   # your package's accent (here: the suite purple)
+```
+
+Your `_pkgdown.yml` is merged over themakR's, so this wins for your site only.
+Links, the active navbar item, focus rings, and blockquote bars follow the new
+accent automatically; fonts, the toggle, the footer, and the layout stay
+shared. (Dark-mode link colour stays Hugo Coder blue unless you also override
+it in CSS — accents that read well on both `#fafafa` and `#212121` work best.)
+
+## Footer wording override
+
+The footer stamps "`<package>` is part of the r-heller suite". To change the
+suffix wording for one site:
+
+```yaml
+template:
+  package: themakR
+  params:
+    part_of: "the r-heller clinical tools"
+```
+
+The value is inserted as-is (plain text or HTML).
+
+## What you should *not* do
+
+- Don't copy themakR's CSS into your package — override `primary` (and
+  `template.params`) instead, so theme fixes reach every site at once.
+- Don't add your own light-switch configuration; it is already on.

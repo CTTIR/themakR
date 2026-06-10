@@ -1,0 +1,26 @@
+Package: themakR
+Title: pkgdown Theme for the r-heller Package Suite
+Version: 0.1.0
+Authors@R:
+    person("Raban", "Heller", email = "raban.heller@charite.de",
+           role = c("aut", "cre"), comment = c(ORCID = "0000-0001-8006-9742"))
+Description: Provides a custom pkgdown template that gives the r-heller family of
+    R packages a shared visual identity: a single purple accent, monospace code
+    styling, light and dark colour modes, and consistent navbar, hex, and footer
+    treatment. Not intended for general use outside the r-heller suite.
+License: MIT + file LICENSE
+URL: https://github.com/r-heller/themakR, https://r-heller.github.io/themakR/
+BugReports: https://github.com/r-heller/themakR/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends:
+    R (>= 4.1)
+Imports:
+    pkgdown (>= 2.1.0)
+Suggests:
+    ggplot2,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Config/Needs/website: r-heller/themakR
+Config/roxygen2/version: 8.0.0
