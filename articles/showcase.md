@@ -6,9 +6,9 @@ right.
 
 ## Heading level two
 
-Body copy set in Inter. Here is a [link to the r-heller
-site](https://r-heller.github.io/), some **bold text**, some *italic
-text*, and inline code such as
+Body copy set in Inter. Here is a [link to the CTTIR
+site](https://cttir.github.io/), some **bold text**, some *italic text*,
+and inline code such as
 [`pkgdown::build_site()`](https://pkgdown.r-lib.org/reference/build_site.html)
 or `x <- c(1, 2, 3)` set in JetBrains Mono.
 

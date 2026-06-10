@@ -50,7 +50,7 @@
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/r-heller/themakR/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/CTTIR/themakR/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
@@ -74,24 +74,24 @@
       <img src="../logo.svg" class="logo" alt=""><h1>Adopting themakR</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/r-heller/themakR/blob/main/vignettes/themakR.Rmd" class="external-link"><code>vignettes/themakR.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/CTTIR/themakR/blob/main/vignettes/themakR.Rmd" class="external-link"><code>vignettes/themakR.Rmd</code></a></small>
       <div class="d-none name"><code>themakR.Rmd</code></div>
     </div>
 
     
     
-<p>themakR is the pkgdown template for the r-heller package suite. It
-gives every package the same look — the Hugo Coder palette used on <a href="https://r-heller.github.io/" class="external-link">r-heller.github.io</a> with light and
-dark modes, Inter body text, JetBrains Mono code, a light/dark/auto
-toggle, the hex top-left in the navbar, the rotemplate-style navigation
-and sidebar, and a shared suite footer — with two lines of
-configuration. This vignette is the complete adoption guide.</p>
+<p>themakR is the pkgdown template for the CTTIR package suite. It gives
+every package the same look — the Hugo Coder palette used on <a href="https://cttir.github.io/" class="external-link">the suite site</a> with light and dark
+modes, Inter body text, JetBrains Mono code, a light/dark/auto toggle,
+the hex top-left in the navbar, the rotemplate-style navigation and
+sidebar, and a shared suite footer — with two lines of configuration.
+This vignette is the complete adoption guide.</p>
 <div class="section level2">
 <h2 id="declare-the-website-dependency">1. Declare the website dependency<a class="anchor" aria-label="anchor" href="#declare-the-website-dependency"></a>
 </h2>
 <p>Add this line to your package’s <code>DESCRIPTION</code>, so the
 pkgdown GitHub Action installs themakR before building your site:</p>
-<pre><code><span><span class="va">Config</span><span class="op">/</span><span class="va">Needs</span><span class="op">/</span><span class="va">website</span><span class="op">:</span> <span class="va">r</span><span class="op">-</span><span class="va">heller</span><span class="op">/</span><span class="va">themakR</span></span></code></pre>
+<pre><code><span><span class="va">Config</span><span class="op">/</span><span class="va">Needs</span><span class="op">/</span><span class="va">website</span><span class="op">:</span> <span class="va">CTTIR</span><span class="op">/</span><span class="va">themakR</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="point-your-site-at-the-template">2. Point your site at the template<a class="anchor" aria-label="anchor" href="#point-your-site-at-the-template"></a>
@@ -151,7 +151,7 @@ package should not point there, drop it in your own
 </h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install the template locally first, if you haven't:</span></span>
-<span><span class="co"># pak::pak("r-heller/themakR")</span></span>
+<span><span class="co"># pak::pak("CTTIR/themakR")</span></span>
 <span><span class="fu">pkgdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">build_site</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>The light/dark/auto toggle, the house styling, and the footer appear
 with no further configuration.</p>
@@ -177,12 +177,12 @@ best.)</p>
 <div class="section level2">
 <h2 id="footer-wording-override">Footer wording override<a class="anchor" aria-label="anchor" href="#footer-wording-override"></a>
 </h2>
-<p>The footer stamps “<code>&lt;package&gt;</code> is part of the
-r-heller suite”. To change the suffix wording for one site:</p>
+<p>The footer stamps “<code>&lt;package&gt;</code> is part of the CTTIR
+suite”. To change the suffix wording for one site:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span></span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> themakR</span></span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="at">  </span><span class="fu">params</span><span class="kw">:</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="at">    </span><span class="fu">part_of</span><span class="kw">:</span><span class="at"> </span><span class="st">"the r-heller clinical tools"</span></span></code></pre></div>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="at">    </span><span class="fu">part_of</span><span class="kw">:</span><span class="at"> </span><span class="st">"the CTTIR clinical tools"</span></span></code></pre></div>
 <p>The value is inserted as-is (plain text or HTML).</p>
 </div>
 <div class="section level2">
@@ -203,11 +203,11 @@ on.</li>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Raban Heller.</p>
+  <p>Developed by R. Heller.</p>
 </div>
 
 <div class="pkgdown-footer-center themakr-footer-suite">
-  <p><span class="themakr-footer-pkg">themakR</span> is part of the <a href="https://r-heller.github.io/" class="external-link">r-heller</a> suite · <a href="https://github.com/r-heller" class="external-link">GitHub</a></p>
+  <p><span class="themakr-footer-pkg">themakR</span> is part of the <a href="https://cttir.github.io/" class="external-link">CTTIR</a> suite · <a href="https://github.com/CTTIR" class="external-link">GitHub</a></p>
 </div>
 
 <div class="pkgdown-footer-right">

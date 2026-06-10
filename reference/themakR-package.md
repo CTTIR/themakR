@@ -1,27 +1,27 @@
-# themakR: pkgdown Theme for the r-heller Package Suite
+# themakR: pkgdown Theme for the CTTIR Package Suite
 
-Provides a custom pkgdown template that gives the r-heller family of R
+Provides a custom pkgdown template that gives the CTTIR family of R
 packages a shared visual identity: a single purple accent, monospace
 code styling, light and dark colour modes, and consistent navbar, hex,
-and footer treatment. Not intended for general use outside the r-heller
+and footer treatment. Not intended for general use outside the CTTIR
 suite.
 
 ## See also
 
 Useful links:
 
-- <https://github.com/r-heller/themakR>
+- <https://github.com/CTTIR/themakR>
 
-- <https://r-heller.github.io/themakR/>
+- <https://cttir.github.io/themakR/>
 
-- Report bugs at <https://github.com/r-heller/themakR/issues>
+- Report bugs at <https://github.com/CTTIR/themakR/issues>
 
 ## Author
 
-**Maintainer**: Raban Heller <raban.heller@charite.de>
+**Maintainer**: R. Heller <raban.heller@charite.de>
 ([ORCID](https://orcid.org/0000-0001-8006-9742))
 
 Authors:
 
-- Raban Heller <raban.heller@charite.de>
+- R. Heller <raban.heller@charite.de>
   ([ORCID](https://orcid.org/0000-0001-8006-9742))

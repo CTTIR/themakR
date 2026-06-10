@@ -1,19 +1,19 @@
 # Adopting themakR
 
-themakR is the pkgdown template for the r-heller package suite. It gives
-every package the same look — the Hugo Coder palette used on
-[r-heller.github.io](https://r-heller.github.io/) with light and dark
-modes, Inter body text, JetBrains Mono code, a light/dark/auto toggle,
-the hex top-left in the navbar, the rotemplate-style navigation and
-sidebar, and a shared suite footer — with two lines of configuration.
-This vignette is the complete adoption guide.
+themakR is the pkgdown template for the CTTIR package suite. It gives
+every package the same look — the Hugo Coder palette used on [the suite
+site](https://cttir.github.io/) with light and dark modes, Inter body
+text, JetBrains Mono code, a light/dark/auto toggle, the hex top-left in
+the navbar, the rotemplate-style navigation and sidebar, and a shared
+suite footer — with two lines of configuration. This vignette is the
+complete adoption guide.
 
 ## 1. Declare the website dependency
 
 Add this line to your package’s `DESCRIPTION`, so the pkgdown GitHub
 Action installs themakR before building your site:
 
-    Config/Needs/website: r-heller/themakR
+    Config/Needs/website: CTTIR/themakR
 
 ## 2. Point your site at the template
 
@@ -70,7 +70,7 @@ home:
 ``` r
 
 # install the template locally first, if you haven't:
-# pak::pak("r-heller/themakR")
+# pak::pak("CTTIR/themakR")
 pkgdown::build_site()
 ```
 
@@ -99,14 +99,14 @@ unless you also override it in CSS — accents that read well on both
 
 ## Footer wording override
 
-The footer stamps “`<package>` is part of the r-heller suite”. To change
+The footer stamps “`<package>` is part of the CTTIR suite”. To change
 the suffix wording for one site:
 
 ``` yaml
 template:
   package: themakR
   params:
-    part_of: "the r-heller clinical tools"
+    part_of: "the CTTIR clinical tools"
 ```
 
 The value is inserted as-is (plain text or HTML).

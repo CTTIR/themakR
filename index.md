@@ -1,14 +1,13 @@
 # themakR
 
 themakR provides the pkgdown template for the
-[r-heller](https://r-heller.github.io/) package suite: the Hugo Coder
-palette from r-heller.github.io (light `#fafafa` / dark `#212121`, blue
-link accent) with a native light/dark/auto toggle at the top right,
-Inter for text, JetBrains Mono for code, the package hex at the top
-left, a rotemplate-style navbar and home sidebar, and a shared suite
-footer.
+[CTTIR](https://cttir.github.io/) package suite: the Hugo Coder palette
+of the suite site (light `#fafafa` / dark `#212121`, blue link accent)
+with a native light/dark/auto toggle at the top right, Inter for text,
+JetBrains Mono for code, the package hex at the top left, a
+rotemplate-style navbar and home sidebar, and a shared suite footer.
 
-It plays the same role for r-heller packages that
+It plays the same role for CTTIR packages that
 [tidytemplate](https://github.com/tidyverse/tidytemplate) plays for the
 tidyverse and [rotemplate](https://docs.ropensci.org/rotemplate/) for
 rOpenSci: it is not a general-purpose theme and is not on CRAN — it
@@ -20,7 +19,7 @@ family.
 ``` r
 
 # install.packages("pak")
-pak::pak("r-heller/themakR")
+pak::pak("CTTIR/themakR")
 ```
 
 ## Usage
@@ -28,7 +27,7 @@ pak::pak("r-heller/themakR")
 In the adopting package’s `DESCRIPTION`:
 
 ``` R
-Config/Needs/website: r-heller/themakR
+Config/Needs/website: CTTIR/themakR
 ```
 
 In its `_pkgdown.yml`:
@@ -43,8 +42,8 @@ development:
 Then
 [`pkgdown::build_site()`](https://pkgdown.r-lib.org/reference/build_site.html).
 See
-[`vignette("themakR")`](https://r-heller.github.io/themakR/articles/themakR.md)
+[`vignette("themakR")`](https://cttir.github.io/themakR/articles/themakR.md)
 for the full adoption guide, including the per-package accent override,
 and
-[`vignette("showcase")`](https://r-heller.github.io/themakR/articles/showcase.md)
+[`vignette("showcase")`](https://cttir.github.io/themakR/articles/showcase.md)
 for a gallery of every styled element in both colour modes.

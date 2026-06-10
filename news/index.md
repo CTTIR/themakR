@@ -2,7 +2,7 @@
 
 ## themakR 0.1.0
 
-- Initial release: shared pkgdown template for the r-heller suite.
+- Initial release: shared pkgdown template for the CTTIR suite.
 - Hugo Coder palette (light `#fafafa`, dark `#212121`, blue link accent)
   with pkgdown’s native light/dark/auto switch.
 - rotemplate-style navbar (hex + brand far left, Search · Reference ·
