@@ -2,9 +2,9 @@
 # Consumers inherit everything here via `template: package: themakR`;
 # anything they set in their own _pkgdown.yml is merged over these values.
 #
-# Palette: Hugo Coder (luizdepra/hugo-coder), the theme used on
-# r-heller.github.io. Light values are set through bslib below; dark-mode
-# values live in inst/pkgdown/extra.scss under [data-bs-theme="dark"].
+# Palette: Hugo Coder (luizdepra/hugo-coder), the suite's house style.
+# Light values are set through bslib below; dark-mode values live in
+# inst/pkgdown/extra.scss under [data-bs-theme="dark"].
 template:
   bootstrap: 5
   light-switch: true            # native far-right light/dark/auto toggle (rotemplate-style)
@@ -48,7 +48,7 @@ home:
       rouniverse:
         title: R-universe
         text: >
-          Browse the [r-heller universe](https://r-heller.r-universe.dev/)
+          Browse the [r-heller universe](https://cttir.r-universe.dev/)
           for installable builds of this package and the rest of the suite.
 
 footer:

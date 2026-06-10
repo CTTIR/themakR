@@ -6,5 +6,5 @@ bibentry(
   author  = person("Raban", "Heller"),
   year    = "2026",
   note    = "R package version 0.1.0",
-  url     = "https://r-heller.github.io/themakR/"
+  url     = "https://cttir.github.io/themakR/"
 )
