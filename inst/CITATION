@@ -2,8 +2,8 @@ citHeader("To cite themakR in publications use:")
 
 bibentry(
   bibtype = "Manual",
-  title   = "themakR: pkgdown Theme for the r-heller Package Suite",
-  author  = person("Raban", "Heller"),
+  title   = "themakR: pkgdown Theme for the CTTIR Package Suite",
+  author  = person("R.", "Heller"),
   year    = "2026",
   note    = "R package version 0.1.0",
   url     = "https://cttir.github.io/themakR/"

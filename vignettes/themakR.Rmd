@@ -7,7 +7,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-themakR is the pkgdown template for the r-heller package suite. It gives every
+themakR is the pkgdown template for the CTTIR package suite. It gives every
 package the same look — the Hugo Coder palette used on
 [the suite site](https://cttir.github.io/) with light and dark modes,
 Inter body text, JetBrains Mono code, a light/dark/auto toggle, the hex
@@ -101,14 +101,14 @@ it in CSS — accents that read well on both `#fafafa` and `#212121` work best.)
 
 ## Footer wording override
 
-The footer stamps "`<package>` is part of the r-heller suite". To change the
+The footer stamps "`<package>` is part of the CTTIR suite". To change the
 suffix wording for one site:
 
 ```yaml
 template:
   package: themakR
   params:
-    part_of: "the r-heller clinical tools"
+    part_of: "the CTTIR clinical tools"
 ```
 
 The value is inserted as-is (plain text or HTML).

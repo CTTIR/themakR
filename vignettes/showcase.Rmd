@@ -25,7 +25,7 @@ visually in both light and dark mode. Use the toggle at the top right.
 
 ## Heading level two
 
-Body copy set in Inter. Here is a [link to the r-heller site](https://cttir.github.io/),
+Body copy set in Inter. Here is a [link to the CTTIR site](https://cttir.github.io/),
 some **bold text**, some *italic text*, and inline code such as
 `pkgdown::build_site()` or `x <- c(1, 2, 3)` set in JetBrains Mono.
 
