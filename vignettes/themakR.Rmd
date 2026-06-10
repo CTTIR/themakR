@@ -9,7 +9,7 @@ vignette: >
 
 themakR is the pkgdown template for the CTTIR package suite. It gives every
 package the same look — the Hugo Coder palette used on
-[the suite site](https://cttir.github.io/) with light and dark modes,
+[the suite site](https://cttir.github.io/website/) with light and dark modes,
 Inter body text, JetBrains Mono code, a light/dark/auto toggle, the hex
 top-left in the navbar, the rotemplate-style navigation and sidebar, and a
 shared suite footer — with two lines of configuration. This vignette is the

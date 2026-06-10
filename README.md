@@ -4,10 +4,10 @@
 # themakR <img src="man/figures/logo.png" align="right" height="139" alt="themakR logo" />
 
 themakR provides the pkgdown template for the
-[CTTIR](https://cttir.github.io/) package suite: the Hugo Coder palette
-of the suite site (light `#fafafa` / dark `#212121`, blue link accent)
-with a native light/dark/auto toggle at the top right, Inter for text,
-JetBrains Mono for code, the package hex at the top left, a
+[CTTIR](https://cttir.github.io/website/) package suite: the Hugo Coder
+palette of the suite site (light `#fafafa` / dark `#212121`, blue link
+accent) with a native light/dark/auto toggle at the top right, Inter for
+text, JetBrains Mono for code, the package hex at the top left, a
 rotemplate-style navbar and home sidebar, and a shared suite footer.
 
 It plays the same role for CTTIR packages that
