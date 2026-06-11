@@ -1,15 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181 209" width="181" height="209" role="img" aria-label="themakR hex logo">
-  <!-- pointy-top hexagon, Hugo Coder palette: dark bg, blue accent -->
-  <polygon points="90.5,4.6 177,54.55 177,154.45 90.5,204.4 4,154.45 4,54.55"
-           fill="#212121" stroke="#1565c0" stroke-width="7" stroke-linejoin="miter"/>
-  <!-- faint inner edge for depth -->
-  <polygon points="90.5,14 168.9,59.2 168.9,149.8 90.5,195 12.1,149.8 12.1,59.2"
-           fill="none" stroke="#42a5f5" stroke-opacity="0.25" stroke-width="1"/>
-  <g font-family="JetBrains Mono, Consolas, Menlo, monospace" text-anchor="middle">
-    <text x="90.5" y="100" font-size="13" fill="#42a5f5">&gt;_</text>
-    <text x="90.5" y="122" font-size="24" font-weight="700">
-      <tspan fill="#42a5f5">{</tspan><tspan fill="#ffffff">themakR</tspan><tspan fill="#42a5f5">}</tspan>
-    </text>
-    <text x="90.5" y="146" font-size="10" letter-spacing="1.5" fill="#9e9e9e">CTTIR</text>
+<svg width="500" height="580" viewBox="0 0 500 580" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgthema" x1="0" y1="0" x2="0.1" y2="1">
+      <stop offset="0%"  stop-color="#2a2d36"/>
+      <stop offset="100%" stop-color="#1c1e25"/>
+    </linearGradient>
+    <clipPath id="hexthema">
+      <polygon points="250,30 455,145 455,375 250,490 45,375 45,145"/>
+    </clipPath>
+  </defs>
+
+  <polygon points="250,30 455,145 455,375 250,490 45,375 45,145" fill="url(#bgthema)"/>
+
+  <g clip-path="url(#hexthema)">
+
+    <!-- Inner inset rim -->
+    <polygon points="250,60 425,158 425,362 250,460 75,362 75,158"
+      fill="none" stroke="#3a3f4a" stroke-width="0.8" opacity="0.5"/>
+
+    <!-- ════════════════════════════════════════════════════════ -->
+    <!-- WORDMARK — { themakR }                                  -->
+    <!-- Monospace, font-size=48, glyph advance ≈ 28.8px         -->
+    <!-- 9 glyphs total. Total width ≈ 9 × 28.8 = 259.2px        -->
+    <!-- Centred at x=250: starts at x=120.4, ends at x=379.6    -->
+    <!--                                                          -->
+    <!-- Glyph x positions (left edge of each glyph):            -->
+    <!--   {  at x=120.4                                          -->
+    <!--   t  at x=149.2                                          -->
+    <!--   h  at x=178.0                                          -->
+    <!--   e  at x=206.8                                          -->
+    <!--   m  at x=235.6                                          -->
+    <!--   a  at x=264.4                                          -->
+    <!--   k  at x=293.2                                          -->
+    <!--   R  at x=322.0                                          -->
+    <!--   }  at x=350.8                                          -->
+    <!--                                                          -->
+    <!-- Use text-anchor="start" on each segment, positioned at  -->
+    <!-- its glyph's left-edge x.                                -->
+    <!-- ════════════════════════════════════════════════════════ -->
+
+    <!-- "{" — opening brace -->
+    <text font-family="monospace" font-weight="700" font-size="48"
+      text-anchor="start" fill="#42A5F5" x="120" y="298">{</text>
+
+    <!-- "themak" — white body, starts after the { -->
+    <text font-family="monospace" font-weight="700" font-size="48"
+      text-anchor="start" fill="#FFFFFF" x="149" y="298">themak</text>
+
+    <!-- "R" — accent colour, after "themak" -->
+    <text font-family="monospace" font-weight="700" font-size="48"
+      text-anchor="start" fill="#42A5F5" x="322" y="298">R</text>
+
+    <!-- "}" — closing brace -->
+    <text font-family="monospace" font-weight="700" font-size="48"
+      text-anchor="start" fill="#42A5F5" x="351" y="298">}</text>
+
+    <!-- Terminal prompt ">_" above and right of the brace -->
+    <g transform="translate(240, 222)">
+      <path d="M 0,0 L 7,5 L 0,10" fill="none"
+        stroke="#42A5F5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+      <line x1="10" y1="10" x2="20" y2="10"
+        stroke="#42A5F5" stroke-width="2.2" stroke-linecap="round" opacity="0.95"/>
+    </g>
+
+    <!-- Suite caption -->
+    <text font-family="monospace" font-weight="400" font-size="14"
+      fill="#9CA3AF" text-anchor="middle" x="250" y="345" letter-spacing="6" opacity="0.85">CTTIR</text>
+
   </g>
+
+  <!-- Hex border — Hugo Coder blue -->
+  <polygon points="250,30 455,145 455,375 250,490 45,375 45,145"
+    fill="none" stroke="#1565c0" stroke-width="11" stroke-linejoin="round"/>
+  <polygon points="250,44 441,153 441,367 250,476 59,367 59,153"
+    fill="none" stroke="#42A5F5" stroke-width="1.2" stroke-linejoin="round" opacity="0.55"/>
 </svg>
