@@ -3,3 +3,10 @@
 .RData
 docs/
 inst/doc/
+.DS_Store
+*.tmp
+*.log
+*~
+*.bak
+*.orig
+*.Rcheck/
