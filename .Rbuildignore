@@ -7,3 +7,5 @@
 ^themakR\.svg$
 ^\.Rproj\.user$
 ^\.remember$
+^codecov\.yml$
+^_coverage$
