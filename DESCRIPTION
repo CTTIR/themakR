@@ -18,9 +18,13 @@ Depends:
 Imports:
     pkgdown (>= 2.1.0)
 Suggests:
+    covr,
     ggplot2,
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0),
+    withr
 VignetteBuilder: knitr
 Config/Needs/website: CTTIR/themakR
 Config/roxygen2/version: 8.0.0
+Config/testthat/edition: 3
