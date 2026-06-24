@@ -1,5 +1,20 @@
 # Element showcase
 
+[![R-CMD-check](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml)
+[![pkgdown](https://github.com/CTTIR/themakR/actions/workflows/pkgdown.yaml/badge.svg)](https://cttir.github.io/themakR/)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/themakR)](https://CRAN.R-project.org/package=themakR)
+[![Codecov test
+coverage](https://codecov.io/gh/CTTIR/themakR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/CTTIR/themakR?branch=main)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/themakR)](https://cran.r-project.org/package=themakR)
+[![CRAN downloads
+total](https://cranlogs.r-pkg.org/badges/grand-total/themakR)](https://cran.r-project.org/package=themakR)
+[![License:
+MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
 This page renders one of every styled element so the theme can be
 checked visually in both light and dark mode. Use the toggle at the top
 right.
