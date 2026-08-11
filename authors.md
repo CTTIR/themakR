@@ -10,10 +10,12 @@
 Source:
 [`inst/CITATION`](https://github.com/CTTIR/themakR/blob/main/inst/CITATION)
 
-Heller R (2026). *themakR: pkgdown Theme for the CTTIR Package Suite*. R
-package version 0.1.0, <https://cttir.github.io/themakR/>.
+Heller R (2026). *themakR: pkgdown Theme for the CTTIR Package Suite*.
+[doi:10.5281/zenodo.21889968](https://doi.org/10.5281/zenodo.21889968).
+R package version 0.1.0, <https://cttir.github.io/themakR/>.
 
     @Manual{,
+      doi = {10.5281/zenodo.21889968},
       title = {themakR: pkgdown Theme for the CTTIR Package Suite},
       author = {R. Heller},
       year = {2026},
