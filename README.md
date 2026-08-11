@@ -3,6 +3,8 @@
 
 # themakR <img src="man/figures/logo.png" align="right" height="139" alt="themakR logo" />
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21889968.svg)](https://doi.org/10.5281/zenodo.21889968)
+
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml)
 [![pkgdown](https://github.com/CTTIR/themakR/actions/workflows/pkgdown.yaml/badge.svg)](https://cttir.github.io/themakR/)
@@ -54,3 +56,11 @@ Then `pkgdown::build_site()`. See `vignette("themakR")` for the full
 adoption guide, including the per-package accent override, and
 `vignette("showcase")` for a gallery of every styled element in both
 colour modes.
+
+## Citation
+
+If you use this software, please cite it as:
+
+> Heller, R. (2026). *themakR: Shared pkgdown theme for the CTTIR package suite* (Version 0.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21889968
+
+DOI: [10.5281/zenodo.21889968](https://doi.org/10.5281/zenodo.21889968)

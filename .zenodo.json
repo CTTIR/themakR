@@ -1,0 +1,35 @@
+{
+  "upload_type": "software",
+  "title": "themakR: Shared pkgdown theme for the CTTIR package suite",
+  "version": "0.1.0",
+  "publication_date": "2026-08-11",
+  "description": "<p>themakR supplies a pkgdown template that gives the CTTIR family of R packages a common visual identity across their documentation websites. It defines a single accent colour, monospace code styling, matching light and dark colour modes, and consistent treatment of the navigation bar, package logo and footer. The goal is that any package in the suite is recognisable as part of the same collection without each maintainer restyling their site by hand. It is a house theme rather than a general-purpose one, and is not intended for use outside the CTTIR suite.</p>",
+  "creators": [
+    {
+      "name": "Heller, Raban",
+      "orcid": "0000-0001-8006-9742"
+    }
+  ],
+  "contributors": [],
+  "license": "mit",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "pkgdown",
+    "documentation",
+    "theme",
+    "css",
+    "package-development",
+    "r-package",
+    "rstats"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/CTTIR/themakR",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Prepared draft. Not yet published."
+}
