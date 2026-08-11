@@ -2,6 +2,7 @@ citHeader("To cite themakR in publications use:")
 
 bibentry(
   bibtype = "Manual",
+  doi     = "10.5281/zenodo.21889968",
   title   = "themakR: pkgdown Theme for the CTTIR Package Suite",
   author  = person("R.", "Heller"),
   year    = "2026",
