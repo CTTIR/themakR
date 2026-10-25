@@ -115,23 +115,25 @@ themakR.</p>
 <code>man/figures/logo.png</code> as a raster companion. The navbar
 supplies the package name as live text, so the hex should not contain a
 second wordmark. The template positions and sizes it automatically.</p>
-<p>CTTIR Coder Edition v4.1 also provides a dark surface variant. Save
-that artwork as <code>man/figures/logo-dark.svg</code>. The shared
-navbar checks this optional asset and switches it with the existing
-light/dark/auto control. Packages without the dark asset keep their
-original logo.</p>
+<p>CTTIR v5 also provides a dark surface variant. Save that artwork as
+<code>man/figures/logo-dark.svg</code>. The shared navbar checks this
+optional asset and switches it with the existing light/dark/auto
+control. Packages without the dark asset keep their original logo.</p>
 <div class="section level3">
 <h3 id="named-readme-lockups">Named README lockups<a class="anchor" aria-label="anchor" href="#named-readme-lockups"></a>
 </h3>
-<p>Use the named light/dark lockups in repository README files. For
-example, after copying the corresponding assets into
-<code>man/figures/</code>:</p>
+<p>Use the named light/dark hexes in repository README files, vignettes,
+package overview pages and figures. In v5, the package name sits inside
+the lower part of the hex, below the scientific artwork. The
+<code>logo-with-name</code> filename identifies this named variant; an
+extra name caption is not needed. For example, after copying the
+corresponding assets into <code>man/figures/</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">picture</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-readme-logo"</span><span class="dt">&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-logo-dark-source"</span></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="ot">          media</span><span class="op">=</span><span class="st">"(prefers-color-scheme: dark)"</span></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="ot">          srcset</span><span class="op">=</span><span class="st">"man/figures/logo-with-name-dark.png"</span><span class="dt">&gt;</span></span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"man/figures/logo-with-name.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"yourPackage"</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="ot">       width</span><span class="op">=</span><span class="st">"120"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"155"</span><span class="dt">&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="ot">       width</span><span class="op">=</span><span class="st">"120"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"139"</span><span class="dt">&gt;</span></span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">picture</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>Repository hosts use the system colour preference. On pkgdown pages
 the shared enhancement also follows the manual colour-mode switch. When
@@ -141,23 +143,25 @@ beside that heading. The README picture remains visible on repository
 hosts.</p>
 </div>
 <div class="section level3">
-<h3 id="live-figure-captions">Live figure captions<a class="anchor" aria-label="anchor" href="#live-figure-captions"></a>
+<h3 id="named-figures">Named figures<a class="anchor" aria-label="anchor" href="#named-figures"></a>
 </h3>
-<p>The shared stylesheet includes versioned CTTIR Coder Edition v4.1
-tokens and the <code>cttir-lockup</code> component. The component
-changes only its own presentation; the site’s existing Bootstrap colours
-and bslib fonts remain in charge. For a figure with a selectable package
-name, use artwork plus a caption:</p>
+<p>The shared stylesheet includes versioned CTTIR v5 tokens and the
+<code>cttir-lockup</code> component. The component changes only its own
+presentation; the site’s existing Bootstrap colours and bslib fonts
+remain in charge. For a named figure that follows the current colour
+mode:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">figure</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-lockup"</span><span class="ot"> data-cttir-topic</span><span class="op">=</span><span class="st">"spectral"</span><span class="dt">&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-hex--light"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"logo.svg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">""</span><span class="dt">&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-hex--dark"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"logo-dark.svg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">""</span><span class="dt">&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">figcaption</span><span class="dt">&gt;</span>yourPackage<span class="dt">&lt;/</span><span class="kw">figcaption</span><span class="dt">&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">figure</span><span class="dt">&gt;</span></span></code></pre></div>
-<p>Adjust image paths for the document’s location. Empty image
-alternatives are appropriate here because the visible caption supplies
-the name. A standalone meaningful image needs its own accessible name.
-Topic colours identify a package family; they do not replace link,
-status, or quantitative data colours.</p>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-hex--light"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"logo-with-name.svg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"yourPackage"</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-hex--dark"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"logo-with-name-dark.svg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"yourPackage"</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">figure</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>Adjust image paths for the document’s location. The component
+displays only the appropriate light or dark variant. SVG lettering is
+outlined, so provide the package name in the image’s <code>alt</code>
+attribute. If a selectable text caption is needed instead, use the
+artwork-only <code>logo.svg</code> and <code>logo-dark.svg</code> with
+empty image alternatives and a <code>figcaption</code> containing the
+package name. Topic colours identify a package family; they do not
+replace link, status, or quantitative data colours.</p>
 </div>
 <div class="section level3">
 <h3 id="standalone-vignette-output">Standalone vignette output<a class="anchor" aria-label="anchor" href="#standalone-vignette-output"></a>

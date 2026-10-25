@@ -53,15 +53,19 @@ Place the artwork-only hex at `man/figures/logo.svg`, with
 package name as live text, so the hex should not contain a second
 wordmark. The template positions and sizes it automatically.
 
-CTTIR Coder Edition v4.1 also provides a dark surface variant. Save that
-artwork as `man/figures/logo-dark.svg`. The shared navbar checks this
-optional asset and switches it with the existing light/dark/auto
-control. Packages without the dark asset keep their original logo.
+CTTIR v5 also provides a dark surface variant. Save that artwork as
+`man/figures/logo-dark.svg`. The shared navbar checks this optional
+asset and switches it with the existing light/dark/auto control.
+Packages without the dark asset keep their original logo.
 
 ### Named README lockups
 
-Use the named light/dark lockups in repository README files. For
-example, after copying the corresponding assets into `man/figures/`:
+Use the named light/dark hexes in repository README files, vignettes,
+package overview pages and figures. In v5, the package name sits inside
+the lower part of the hex, below the scientific artwork. The
+`logo-with-name` filename identifies this named variant; an extra name
+caption is not needed. For example, after copying the corresponding
+assets into `man/figures/`:
 
 ``` html
 <picture class="cttir-readme-logo">
@@ -69,7 +73,7 @@ example, after copying the corresponding assets into `man/figures/`:
           media="(prefers-color-scheme: dark)"
           srcset="man/figures/logo-with-name-dark.png">
   <img src="man/figures/logo-with-name.png" alt="yourPackage"
-       width="120" height="155">
+       width="120" height="139">
 </picture>
 ```
 
@@ -80,27 +84,29 @@ pkgdown’s home page because pkgdown already supplies its own artwork
 beside that heading. The README picture remains visible on repository
 hosts.
 
-### Live figure captions
+### Named figures
 
-The shared stylesheet includes versioned CTTIR Coder Edition v4.1 tokens
-and the `cttir-lockup` component. The component changes only its own
+The shared stylesheet includes versioned CTTIR v5 tokens and the
+`cttir-lockup` component. The component changes only its own
 presentation; the site’s existing Bootstrap colours and bslib fonts
-remain in charge. For a figure with a selectable package name, use
-artwork plus a caption:
+remain in charge. For a named figure that follows the current colour
+mode:
 
 ``` html
 <figure class="cttir-lockup" data-cttir-topic="spectral">
-  <img class="cttir-hex--light" src="logo.svg" alt="">
-  <img class="cttir-hex--dark" src="logo-dark.svg" alt="">
-  <figcaption>yourPackage</figcaption>
+  <img class="cttir-hex--light" src="logo-with-name.svg" alt="yourPackage">
+  <img class="cttir-hex--dark" src="logo-with-name-dark.svg" alt="yourPackage">
 </figure>
 ```
 
-Adjust image paths for the document’s location. Empty image alternatives
-are appropriate here because the visible caption supplies the name. A
-standalone meaningful image needs its own accessible name. Topic colours
-identify a package family; they do not replace link, status, or
-quantitative data colours.
+Adjust image paths for the document’s location. The component displays
+only the appropriate light or dark variant. SVG lettering is outlined,
+so provide the package name in the image’s `alt` attribute. If a
+selectable text caption is needed instead, use the artwork-only
+`logo.svg` and `logo-dark.svg` with empty image alternatives and a
+`figcaption` containing the package name. Topic colours identify a
+package family; they do not replace link, status, or quantitative data
+colours.
 
 ### Standalone vignette output
 
