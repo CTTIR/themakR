@@ -9,3 +9,4 @@
 ^\.remember$
 ^codecov\.yml$
 ^_coverage$
+^tools/branding$
