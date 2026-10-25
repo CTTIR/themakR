@@ -26,7 +26,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="../index.html"><img src="../logo.svg" alt="" class="themakr-navbar-logo">themakR</a>
+    <a class="navbar-brand me-2" href="../index.html"><img src="../logo.svg" alt="" class="themakr-navbar-logo" data-cttir-dark-src="../reference/figures/logo-dark.svg">themakR</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.0</small>
 
@@ -63,7 +63,7 @@
 
 
   </div>
-</nav><div class="container template-article">
+</nav><script src="../themakr-brand.js" defer></script><div class="container template-article">
 
 
 
@@ -111,11 +111,68 @@ themakR.</p>
 <div class="section level2">
 <h2 id="provide-your-hex">3. Provide your hex<a class="anchor" aria-label="anchor" href="#provide-your-hex"></a>
 </h2>
-<p>Make sure your package has its hex sticker at
-<code>man/figures/logo.png</code> (an additional
-<code>man/figures/logo.svg</code> is even better — it stays sharp at any
-size). The template places it top-left in the navbar automatically and
-sizes it for you. No configuration needed.</p>
+<p>Place the artwork-only hex at <code>man/figures/logo.svg</code>, with
+<code>man/figures/logo.png</code> as a raster companion. The navbar
+supplies the package name as live text, so the hex should not contain a
+second wordmark. The template positions and sizes it automatically.</p>
+<p>CTTIR Coder Edition v4.1 also provides a dark surface variant. Save
+that artwork as <code>man/figures/logo-dark.svg</code>. The shared
+navbar checks this optional asset and switches it with the existing
+light/dark/auto control. Packages without the dark asset keep their
+original logo.</p>
+<div class="section level3">
+<h3 id="named-readme-lockups">Named README lockups<a class="anchor" aria-label="anchor" href="#named-readme-lockups"></a>
+</h3>
+<p>Use the named light/dark lockups in repository README files. For
+example, after copying the corresponding assets into
+<code>man/figures/</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">picture</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-readme-logo"</span><span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-logo-dark-source"</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="ot">          media</span><span class="op">=</span><span class="st">"(prefers-color-scheme: dark)"</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="ot">          srcset</span><span class="op">=</span><span class="st">"man/figures/logo-with-name-dark.png"</span><span class="dt">&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"man/figures/logo-with-name.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"yourPackage"</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="ot">       width</span><span class="op">=</span><span class="st">"120"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"155"</span><span class="dt">&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">picture</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>Repository hosts use the system colour preference. On pkgdown pages
+the shared enhancement also follows the manual colour-mode switch. When
+the picture is inside the README’s first heading, themakR hides it on
+pkgdown’s home page because pkgdown already supplies its own artwork
+beside that heading. The README picture remains visible on repository
+hosts.</p>
+</div>
+<div class="section level3">
+<h3 id="live-figure-captions">Live figure captions<a class="anchor" aria-label="anchor" href="#live-figure-captions"></a>
+</h3>
+<p>The shared stylesheet includes versioned CTTIR Coder Edition v4.1
+tokens and the <code>cttir-lockup</code> component. The component
+changes only its own presentation; the site’s existing Bootstrap colours
+and bslib fonts remain in charge. For a figure with a selectable package
+name, use artwork plus a caption:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">figure</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-lockup"</span><span class="ot"> data-cttir-topic</span><span class="op">=</span><span class="st">"spectral"</span><span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-hex--light"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"logo.svg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">""</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cttir-hex--dark"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"logo-dark.svg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">""</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">figcaption</span><span class="dt">&gt;</span>yourPackage<span class="dt">&lt;/</span><span class="kw">figcaption</span><span class="dt">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">figure</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>Adjust image paths for the document’s location. Empty image
+alternatives are appropriate here because the visible caption supplies
+the name. A standalone meaningful image needs its own accessible name.
+Topic colours identify a package family; they do not replace link,
+status, or quantitative data colours.</p>
+</div>
+<div class="section level3">
+<h3 id="standalone-vignette-output">Standalone vignette output<a class="anchor" aria-label="anchor" href="#standalone-vignette-output"></a>
+</h3>
+<p>A local <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/html_vignette.html" class="external-link">rmarkdown::html_vignette</a></code> render does not inherit
+the pkgdown template. For an optional standalone match, keep the source
+kit’s <code>cttir-vignette.css</code>, <code>cttir-tokens.css</code>,
+<code>cttir-brand.css</code>, <code>cttir-fonts.css</code>, and
+<code>fonts/</code> together, then select
+<code>cttir-vignette.css</code> in the vignette’s output configuration.
+Render that output separately to check its resource paths. Do not add
+this standalone stylesheet to a pkgdown article: the shared theme
+already supplies the component styles and loads Inter and JetBrains Mono
+through bslib.</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="sidebar-prerequisites-checklist">4. Sidebar prerequisites checklist<a class="anchor" aria-label="anchor" href="#sidebar-prerequisites-checklist"></a>
@@ -143,14 +200,14 @@ cleanly through <code><a href="https://rdrr.io/r/utils/citation.html" class="ext
 bug. The R-universe section is shared config and always renders; if your
 package should not point there, drop it in your own
 <code>_pkgdown.yml</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">home</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">    </span><span class="fu">structure</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">links</span><span class="kw">,</span><span class="at"> license</span><span class="kw">,</span><span class="at"> community</span><span class="kw">,</span><span class="at"> citation</span><span class="kw">,</span><span class="at"> authors</span><span class="kw">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">home</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">    </span><span class="fu">structure</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">links</span><span class="kw">,</span><span class="at"> license</span><span class="kw">,</span><span class="at"> community</span><span class="kw">,</span><span class="at"> citation</span><span class="kw">,</span><span class="at"> authors</span><span class="kw">]</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="build">5. Build<a class="anchor" aria-label="anchor" href="#build"></a>
 </h2>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install the template locally first, if you haven't:</span></span>
 <span><span class="co"># pak::pak("CTTIR/themakR")</span></span>
 <span><span class="fu">pkgdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">build_site</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -163,10 +220,10 @@ with no further configuration.</p>
 <p>Each package may keep its own distinct accent (for example, the
 border colour of its hex) while sharing everything else. Set bslib’s
 <code>primary</code> in <em>your</em> <code>_pkgdown.yml</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> themakR</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">  </span><span class="fu">bslib</span><span class="kw">:</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="at">    </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">"#5E2C8E"</span><span class="co">   # your package's accent (here: the suite purple)</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> themakR</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="at">  </span><span class="fu">bslib</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="at">    </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">"#5E2C8E"</span><span class="co">   # your package's accent (here: the suite purple)</span></span></code></pre></div>
 <p>Your <code>_pkgdown.yml</code> is merged over themakR’s, so this wins
 for your site only. Links, the active navbar item, focus rings, and
 blockquote bars follow the new accent automatically; fonts, the toggle,
@@ -180,10 +237,10 @@ best.)</p>
 </h2>
 <p>The footer stamps “<code>&lt;package&gt;</code> is part of the CTTIR
 suite”. To change the suffix wording for one site:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> themakR</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="at">  </span><span class="fu">params</span><span class="kw">:</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="at">    </span><span class="fu">part_of</span><span class="kw">:</span><span class="at"> </span><span class="st">"the CTTIR clinical tools"</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> themakR</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="at">  </span><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">    </span><span class="fu">part_of</span><span class="kw">:</span><span class="at"> </span><span class="st">"the CTTIR clinical tools"</span></span></code></pre></div>
 <p>The value is inserted as-is (plain text or HTML).</p>
 </div>
 <div class="section level2">
