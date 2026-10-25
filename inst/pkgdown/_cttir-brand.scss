@@ -1,0 +1,41 @@
+/* Component rules shared by Hugo Coder, themakR and standalone vignettes.
+   Load after cttir-tokens.css. Existing host fonts can remain in charge. */
+.cttir-lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  width: var(--cttir-logo-width, 11rem);
+  max-width: 100%;
+  margin: 1.5rem 0;
+  padding: 0;
+  color: var(--cttir-heading);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.cttir-lockup img, img.cttir-hex {
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  filter: none;
+}
+.cttir-lockup figcaption {
+  font-family: var(--cttir-font-brand);
+  font-size: 1.15rem;
+  font-weight: var(--cttir-brand-weight);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  text-align: center;
+  color: inherit;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+.cttir-lockup .cttir-hex--light { display: var(--cttir-show-light); }
+.cttir-lockup .cttir-hex--dark { display: var(--cttir-show-dark); }
+/* Navbar already displays the name as live text: always use artwork only. */
+img.themakr-navbar-logo { background: transparent; border: 0; box-shadow: none; }

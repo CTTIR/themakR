@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg fixed-top {{#bg}}bg-{{{.}}}{{/bg}}" {{#type}}data-bs-theme="{{{.}}}"{{/type}} aria-label="{{#translate}}{{site_nav}}{{/translate}}">
   <div class="container">
     {{#includes}}{{{before_title}}}{{/includes}}
-    <a class="navbar-brand me-2" href="{{#site}}{{root}}{{/site}}index.html">{{#logo}}<img src="{{src}}" alt="" class="themakr-navbar-logo">{{/logo}}{{#site}}{{title}}{{/site}}</a>
+    <a class="navbar-brand me-2" href="{{#site}}{{root}}{{/site}}index.html">{{#logo}}<img src="{{src}}" alt="" class="themakr-navbar-logo" data-cttir-dark-src="{{#site}}{{root}}{{/site}}reference/figures/logo-dark.svg">{{/logo}}{{#site}}{{title}}{{/site}}</a>
 
     <small class="nav-text {{#development}}text-{{version_label}}{{/development}} me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{#development}}{{version_tooltip}}{{/development}}">{{#package}}{{version}}{{/package}}</small>
 
@@ -29,3 +29,4 @@
   </div>
 </nav>
 {{/navbar}}
+<script src="{{#site}}{{root}}{{/site}}themakr-brand.js" defer></script>
