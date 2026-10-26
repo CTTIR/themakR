@@ -59,5 +59,19 @@ Only `_cttir-tokens.scss` is retained; the generator's standalone font copies
 are removed with its staging directory. It does not render artwork or change
 the component stylesheet, global theme settings or runtime dependencies.
 
+After building pkgdown, synchronize the current branding in its output:
+
+```sh
+Rscript tools/branding/sync-site.R docs
+```
+
+This refreshes branding images and the web manifest at the output root and
+its existing `dev/` directory. Every HTML page receives browser-tab, touch-icon
+and manifest links relative to its own directory, including nested articles.
+The links include an artwork revision so browsers refresh changed icons.
+Only icon declarations in the page head change; article content and examples
+are preserved. Symbolic links in the output tree are rejected. The pkgdown
+workflow runs this step before deployment.
+
 Source archive SHA-256:
 `420401d00ab4c5eefdd74440d826b76282f3c1e5262c1f044fc0c6a052f6890e`
