@@ -1,5 +1,7 @@
 # Adopting themakR
 
+![themakR logo](figures/logo.svg)![themakR logo](figures/logo-dark.svg)
+
 [![R-CMD-check](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml)
 [![pkgdown](https://github.com/CTTIR/themakR/actions/workflows/pkgdown.yaml/badge.svg)](https://cttir.github.io/themakR/)
 [![CRAN
@@ -48,15 +50,19 @@ the right), and the home sidebar are all inherited from themakR.
 
 ## 3. Provide your hex
 
-Place the artwork-only hex at `man/figures/logo.svg`, with
-`man/figures/logo.png` as a raster companion. The navbar supplies the
-package name as live text, so the hex should not contain a second
-wordmark. The template positions and sizes it automatically.
+Copy the approved named v5 light hex to `man/figures/logo.svg` and
+`man/figures/logo.png`. Copy its dark counterpart to
+`man/figures/logo-dark.svg`. These standard aliases are the same artwork
+as `logo-with-name.svg`, `logo-with-name.png`, and
+`logo-with-name-dark.svg`. The package name belongs inside the lower
+part of every branding hex. The live navbar title remains available for
+navigation and accessibility.
 
-CTTIR v5 also provides a dark surface variant. Save that artwork as
-`man/figures/logo-dark.svg`. The shared navbar checks this optional
-asset and switches it with the existing light/dark/auto control.
-Packages without the dark asset keep their original logo.
+themakR displays this named hex on every page, including articles,
+reference topics, changelog and utility pages. It switches the navbar
+and homepage heading artwork with the existing light/dark/auto control.
+Packages without the dark asset keep their light logo. The aspect ratio
+is preserved at both desktop and mobile navbar sizes.
 
 ### Named README lockups
 
@@ -80,7 +86,7 @@ assets into `man/figures/`:
 Repository hosts use the system colour preference. On pkgdown pages the
 shared enhancement also follows the manual colour-mode switch. When the
 picture is inside the README’s first heading, themakR hides it on
-pkgdown’s home page because pkgdown already supplies its own artwork
+pkgdown’s home page because pkgdown already supplies the same named hex
 beside that heading. The README picture remains visible on repository
 hosts.
 
@@ -102,9 +108,10 @@ mode:
 Adjust image paths for the document’s location. The component displays
 only the appropriate light or dark variant. SVG lettering is outlined,
 so provide the package name in the image’s `alt` attribute. If a
-selectable text caption is needed instead, use the artwork-only
-`logo.svg` and `logo-dark.svg` with empty image alternatives and a
-`figcaption` containing the package name. Topic colours identify a
+selectable text caption is needed for a separate artwork illustration,
+use an explicitly named artwork-only asset with an empty image
+alternative and a `figcaption`. Keep the standard `logo.svg` and
+`logo-dark.svg` aliases as named package hexes. Topic colours identify a
 package family; they do not replace link, status, or quantitative data
 colours.
 
@@ -112,14 +119,27 @@ colours.
 
 A local
 [`rmarkdown::html_vignette`](https://pkgs.rstudio.com/rmarkdown/reference/html_vignette.html)
-render does not inherit the pkgdown template. For an optional standalone
-match, keep the source kit’s `cttir-vignette.css`, `cttir-tokens.css`,
-`cttir-brand.css`, `cttir-fonts.css`, and `fonts/` together, then select
-`cttir-vignette.css` in the vignette’s output configuration. Render that
-output separately to check its resource paths. Do not add this
-standalone stylesheet to a pkgdown article: the shared theme already
-supplies the component styles and loads Inter and JetBrains Mono through
-bslib.
+render does not inherit the pkgdown template. Every vignette and article
+therefore carries its own small, scoped branding block, with both named
+light and dark SVGs stored in `vignettes/figures/`. The image block is
+HTML rather than an evaluated R chunk, so global chunk options and
+unavailable analysis dependencies cannot suppress the logo.
+
+Use child paths relative to the source page: `figures/logo.svg` and
+`figures/logo-dark.svg`. Pages in `vignettes/articles/` need their own
+`vignettes/articles/figures/` copies because pkgdown does not copy
+parent-path resources. Declare both paths in each page’s
+`resource_files` metadata. A self-contained HTML render embeds both
+images; pkgdown copies them alongside the generated articles. The scoped
+image styles follow the system colour preference in standalone output
+and the explicit light/dark switch on pkgdown. No separate caption, font
+installation or extra package dependency is needed for outlined v5
+lettering.
+
+Render both standalone and pkgdown output when adding a page. Check the
+visible package name, the two local image paths, the light/dark modes,
+and nested article links. The shared navbar alone does not brand an
+installed standalone vignette.
 
 ## 4. Sidebar prerequisites checklist
 

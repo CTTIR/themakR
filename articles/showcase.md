@@ -1,5 +1,7 @@
 # Element showcase
 
+![themakR logo](figures/logo.svg)![themakR logo](figures/logo-dark.svg)
+
 [![R-CMD-check](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml)
 [![pkgdown](https://github.com/CTTIR/themakR/actions/workflows/pkgdown.yaml/badge.svg)](https://cttir.github.io/themakR/)
 [![CRAN
