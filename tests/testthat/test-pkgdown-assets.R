@@ -35,3 +35,17 @@ test_that("a CITATION file is shipped", {
   cit <- system.file("CITATION", package = "themakR")
   expect_true(file.exists(cit))
 })
+
+test_that("named image aliases follow the page colour mode", {
+  node <- Sys.which("node")
+  skip_if(!nzchar(node), "Node is needed for the template script test")
+  script <- system.file("pkgdown", "BS5", "assets", "themakr-brand.js",
+                        package = "themakR")
+  fixture <- test_path("fixtures", "brand-images.cjs")
+  output <- system2(node, c(shQuote(fixture), shQuote(script)),
+                    stdout = TRUE, stderr = TRUE)
+  expect_null(attr(output, "status"))
+  expect_match(paste(output, collapse = "\n"),
+               "Named logo colour modes and missing-dark fallback passed.",
+               fixed = TRUE)
+})
