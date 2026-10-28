@@ -1,5 +1,9 @@
 # themakR 0.1.0
 
+* Standardize the named v5 package logo across README, documentation pages
+  and available application headers, with matching light and dark artwork.
+
+
 * Initial release: shared pkgdown template for the CTTIR suite.
 * Hugo Coder palette (light `#fafafa`, dark `#212121`, blue link accent) with
   pkgdown's native light/dark/auto switch.

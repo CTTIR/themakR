@@ -70,14 +70,28 @@
 }
 
 img.themakr-navbar-logo {
-  height: 48px;
+  height: 64px;
   width: auto;
 }
 
 @include media-breakpoint-down(sm) {
   img.themakr-navbar-logo {
-    height: 36px;
+    height: 48px;
   }
+}
+
+// Keep content and anchor targets below the larger named branding hex.
+:root { --themakr-navbar-offset: 96px; }
+.row > main, .row > aside { margin-top: var(--themakr-navbar-offset); }
+html, body { scroll-padding-top: var(--themakr-navbar-offset); }
+@include media-breakpoint-up(sm) {
+  #toc {
+    top: var(--themakr-navbar-offset);
+    max-height: calc(100vh - var(--themakr-navbar-offset) - 1rem);
+  }
+}
+@include media-breakpoint-down(sm) {
+  :root { --themakr-navbar-offset: 80px; }
 }
 
 // Active nav item picks up the accent, kept as a quiet tint rather than a fill.
@@ -160,8 +174,8 @@ blockquote {
 @import "cttir-tokens";
 @import "cttir-brand";
 
-// pkgdown supplies an artwork-only logo beside the page heading. Keep the
-// named README picture for repository hosts, without duplicating it here.
+// The standard pkgdown logo is the named v5 hex beside the page heading.
+// Keep the same README artwork for repository hosts without duplicating it.
 .page-header h1 picture.cttir-readme-logo {
   display: none;
 }
