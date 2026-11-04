@@ -3,7 +3,6 @@
 
 # themakR <picture class="cttir-readme-logo"><source class="cttir-logo-dark-source" media="(prefers-color-scheme: dark)" srcset="man/figures/logo-with-name-dark.png" /><img src="man/figures/logo-with-name.png" align="right" alt="themakR logo" width="120" height="139" /></picture>
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21889968.svg)](https://doi.org/10.5281/zenodo.21889968)
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CTTIR/themakR/actions/workflows/R-CMD-check.yaml)
@@ -58,9 +57,8 @@ colour modes.
 
 If you use this software, please cite it as:
 
-> Heller, R. (2026). *themakR: Shared pkgdown theme for the CTTIR package suite* (Version 0.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21889968
+> Heller, R. (2026). *themakR: Shared pkgdown theme for the CTTIR package suite* (Version 0.1.0) [Computer software]. https://github.com/CTTIR/themakR
 
-DOI: [10.5281/zenodo.21889968](https://doi.org/10.5281/zenodo.21889968)
 
 ## Use of LLM tools
 

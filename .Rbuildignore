@@ -11,3 +11,5 @@
 ^_coverage$
 ^tools/branding$
 ^\.git$
+^\.zenodo\.json$
+^CITATION\.cff$
