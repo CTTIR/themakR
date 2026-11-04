@@ -1,7 +1,5 @@
 # themakR ![themakR logo](reference/figures/logo-with-name.png)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21889968.svg)](https://doi.org/10.5281/zenodo.21889968)
-
 themakR provides the pkgdown template for the
 [CTTIR](https://cttir.github.io/website/) package suite: the Hugo Coder
 palette of the suite site (light `#fafafa` / dark `#212121`, blue link
@@ -55,10 +53,8 @@ for a gallery of every styled element in both colour modes.
 If you use this software, please cite it as:
 
 > Heller, R. (2026). *themakR: Shared pkgdown theme for the CTTIR
-> package suite* (Version 0.1.0) \[Computer software\]. Zenodo.
-> <https://doi.org/10.5281/zenodo.21889968>
-
-DOI: [10.5281/zenodo.21889968](https://doi.org/10.5281/zenodo.21889968)
+> package suite* (Version 0.1.0) \[Computer software\].
+> <https://github.com/CTTIR/themakR>
 
 ## Use of LLM tools
 
