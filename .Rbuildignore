@@ -13,3 +13,5 @@
 ^\.git$
 ^\.zenodo\.json$
 ^CITATION\.cff$
+^cran-comments\.md$
+^codemeta\.json$
