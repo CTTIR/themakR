@@ -1,5 +1,14 @@
 # Changelog
 
+## themakR 0.2.0
+
+- Prepare the package for CRAN: the maintainer address is now
+  <raban.heller@uni-ulm.de>, `Language` is declared, the `Description`
+  is written in full sentences, `inst/CITATION` takes the version from
+  the installed package, and `cran-comments.md` is added.
+- Use neutral wording in the README introduction and drop the CRAN
+  status and download badges from the README source and the vignettes.
+
 ## themakR 0.1.0
 
 - Standardize the named v5 package logo across README, documentation

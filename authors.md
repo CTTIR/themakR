@@ -11,12 +11,12 @@ Source:
 [`inst/CITATION`](https://github.com/CTTIR/themakR/blob/main/inst/CITATION)
 
 Heller R (2026). *themakR: pkgdown Theme for the CTTIR Package Suite*. R
-package version 0.1.0, <https://cttir.github.io/themakR/>.
+package version 0.2.0, <https://cttir.github.io/themakR/>.
 
     @Manual{,
       title = {themakR: pkgdown Theme for the CTTIR Package Suite},
       author = {R. Heller},
       year = {2026},
-      note = {R package version 0.1.0},
+      note = {R package version 0.2.0},
       url = {https://cttir.github.io/themakR/},
     }
