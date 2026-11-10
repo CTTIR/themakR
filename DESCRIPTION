@@ -3,7 +3,7 @@ Title: 'pkgdown' Theme for the CTTIR Package Suite
 Version: 0.2.0
 Authors@R:
     person("R.", "Heller", email = "raban.heller@uni-ulm.de",
-           role = c("aut", "cre"), comment = c(ORCID = "0000-0001-8006-9742"))
+           role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0001-8006-9742"))
 Description: Provides a custom 'pkgdown' template that gives the Computational
     Trauma and Tissue Injury Research (CTTIR) family of R packages a shared
     visual identity: a single purple accent, monospace code styling, light and
