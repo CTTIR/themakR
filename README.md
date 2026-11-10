@@ -22,9 +22,8 @@ rotemplate-style navbar and home sidebar, and a shared suite footer.
 It plays the same role for CTTIR packages that
 [tidytemplate](https://github.com/tidyverse/tidytemplate) plays for the
 tidyverse and [rotemplate](https://docs.ropensci.org/rotemplate/) for
-rOpenSci: it is not a general-purpose theme and is not on CRAN — it
-installs from GitHub and exists so the family of sites looks like a
-family.
+rOpenSci: it is not a general-purpose theme; it exists so the family of
+sites looks like a family.
 
 ## Installation
 
