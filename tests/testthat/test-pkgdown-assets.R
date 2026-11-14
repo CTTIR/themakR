@@ -49,3 +49,18 @@ test_that("named image aliases follow the page colour mode", {
                "Named logo colour modes and missing-dark fallback passed.",
                fixed = TRUE)
 })
+
+test_that("theme controls remain usable without browser storage", {
+  script <- system.file("pkgdown", "BS5", "assets", "lightswitch.js",
+                        package = "themakR")
+  expect_true(file.exists(script))
+  node <- Sys.which("node")
+  skip_if(!nzchar(node), "Node is needed for the theme storage test")
+  fixture <- test_path("fixtures", "theme-storage.cjs")
+  output <- system2(node, c(shQuote(fixture), shQuote(script)),
+                    stdout = TRUE, stderr = TRUE)
+  expect_null(attr(output, "status"))
+  expect_match(paste(output, collapse = "\n"),
+               "Theme controls retain selection, labels, focus and auto mode without storage.",
+               fixed = TRUE)
+})

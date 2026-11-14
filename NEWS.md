@@ -1,5 +1,8 @@
 # themakR 0.2.0
 
+* Keep light/dark/auto controls and matching artwork usable when browser
+  storage is unavailable or contains an unrecognized theme value.
+
 * Prepare the package for CRAN: the maintainer address is now
   raban.heller@uni-ulm.de, `Language` is declared, the `Description` is
   written in full sentences, `inst/CITATION` takes the version from the
