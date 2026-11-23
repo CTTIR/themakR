@@ -9,6 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+pkg_version <- read.dcf("DESCRIPTION", fields = "Version")[[1]]
 ```
 
 # themakR <picture class="cttir-readme-logo"><source class="cttir-logo-dark-source" media="(prefers-color-scheme: dark)" srcset="man/figures/logo-with-name-dark.png" /><img src="man/figures/logo-with-name.png" align="right" alt="themakR logo" width="120" height="139" /></picture>
@@ -62,6 +63,12 @@ development:
 Then `pkgdown::build_site()`. See `vignette("themakR")` for the full adoption
 guide, including the per-package accent override, and `vignette("showcase")`
 for a gallery of every styled element in both colour modes.
+
+## Citation
+
+If you use this software, please cite it as:
+
+> Heller, R. (2026). *themakR: Shared pkgdown theme for the CTTIR package suite* (Version `r pkg_version`) [Computer software]. https://github.com/CTTIR/themakR
 
 ## Use of LLM tools
 
