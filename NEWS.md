@@ -46,6 +46,8 @@
   download badges from the README source and the vignettes.
 * The formula section of the element showcase is headed "Maths", in line
   with the British English of the rest of the documentation.
+* The citation in the README, `CITATION.cff` and `.zenodo.json` names the
+  author as R. Heller, as `inst/CITATION` does.
 
 # themakR 0.1.0
 

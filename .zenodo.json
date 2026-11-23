@@ -6,7 +6,7 @@
   "description": "<p>themakR supplies a pkgdown template that gives the CTTIR family of R packages a common visual identity across their documentation websites. It defines a single accent colour, monospace code styling, matching light and dark colour modes, and consistent treatment of the navigation bar, package logo and footer. The goal is that any package in the suite is recognisable as part of the same collection without each maintainer restyling their site by hand. It is a house theme rather than a general-purpose one, and is not intended for use outside the CTTIR suite.</p>",
   "creators": [
     {
-      "name": "Heller, Raban",
+      "name": "Heller, R.",
       "orcid": "0000-0001-8006-9742"
     }
   ],
