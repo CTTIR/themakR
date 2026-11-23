@@ -17,9 +17,9 @@ test_that("the SCSS override file is shipped", {
 
 test_that("the navbar and footer templates are shipped", {
   navbar <- system.file("pkgdown", "BS5", "templates", "navbar.html",
-                         package = "themakR")
+                        package = "themakR")
   footer <- system.file("pkgdown", "BS5", "templates", "footer.html",
-                         package = "themakR")
+                        package = "themakR")
   expect_true(file.exists(navbar))
   expect_true(file.exists(footer))
 })
@@ -60,7 +60,10 @@ test_that("theme controls remain usable without browser storage", {
   output <- system2(node, c(shQuote(fixture), shQuote(script)),
                     stdout = TRUE, stderr = TRUE)
   expect_null(attr(output, "status"))
-  expect_match(paste(output, collapse = "\n"),
-               "Theme controls retain selection, labels, focus and auto mode without storage.",
-               fixed = TRUE)
+  expect_match(
+    paste(output, collapse = "\n"),
+    paste("Theme controls retain selection, labels, focus and auto mode",
+          "without storage."),
+    fixed = TRUE
+  )
 })
