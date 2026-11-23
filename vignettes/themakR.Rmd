@@ -211,7 +211,8 @@ navbar:
     right: [search, intro, reference, articles, news, github, lightswitch]
 ```
 
-Linking the vignette from the README, as themakR does, works as well.
+themakR's own site carries this override for the guide you are reading.
+Linking the vignette from the README works as well.
 
 ## Per-package accent override
 

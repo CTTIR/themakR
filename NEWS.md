@@ -25,7 +25,7 @@
 * The README source carries the citation section of the rendered README, and
   the citation names the current version.
 * The adoption guide explains how to link a "Get started" vignette, which the
-  shared navbar does not list.
+  shared navbar does not list. The site of themakR links the guide that way.
 * `DESCRIPTION` gains a `Copyright` field that points to `inst/COPYRIGHTS`,
   the notice for the light switch script adapted from pkgdown.
 * The figure in the element showcase has alternative text.

@@ -10,6 +10,14 @@ template:
 development:
   mode: auto
 
+# The shared navbar has no "Get started" entry, so the adoption guide
+# (vignettes/themakR.Rmd) would be missing from the menu of this site. This is
+# the per-package override the guide describes.
+navbar:
+  structure:
+    left:  []
+    right: [search, intro, reference, articles, news, github, lightswitch]
+
 reference:
 - title: Demo content
   desc: >
