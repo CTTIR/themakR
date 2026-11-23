@@ -48,6 +48,8 @@
   with the British English of the rest of the documentation.
 * The citation in the README, `CITATION.cff` and `.zenodo.json` names the
   author as R. Heller, as `inst/CITATION` does.
+* The README citation, `CITATION.cff` and `.zenodo.json` use the title of
+  `inst/CITATION`, "themakR: pkgdown Theme for the CTTIR Package Suite".
 
 # themakR 0.1.0
 
