@@ -131,6 +131,12 @@ body pre {
   background-color: #2b2b2b;
 }
 
+// The rule above has the same specificity as pkgdown's `a > code` and lands
+// later in the bundle, so restate it: linked inline code keeps the link colour.
+a > code {
+  color: inherit;
+}
+
 // ---------------------------------------------------------------------------
 // Tables
 // ---------------------------------------------------------------------------
