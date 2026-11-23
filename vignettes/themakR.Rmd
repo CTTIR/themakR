@@ -191,6 +191,23 @@ pkgdown::build_site()
 The light/dark/auto toggle, the house styling, and the footer appear with no
 further configuration.
 
+## Linking a "Get started" vignette
+
+pkgdown keeps a vignette named after the package (`vignettes/<package>.Rmd`)
+out of the Articles menu, because its own default navbar shows that vignette
+as "Get started". The shared navbar has no such entry, so the vignette is
+built but not linked from the navbar. To show it, add pkgdown's `intro`
+component to the navbar structure in *your* `_pkgdown.yml`:
+
+```yaml
+navbar:
+  structure:
+    left:  []
+    right: [search, intro, reference, articles, news, github, lightswitch]
+```
+
+Linking the vignette from the README, as themakR does, works as well.
+
 ## Per-package accent override
 
 Each package may keep its own distinct accent (for example, the border colour
