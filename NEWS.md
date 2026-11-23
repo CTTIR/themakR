@@ -44,6 +44,8 @@
   installed package, and `cran-comments.md` is added.
 * Use neutral wording in the README introduction and drop the CRAN status and
   download badges from the README source and the vignettes.
+* The formula section of the element showcase is headed "Maths", in line
+  with the British English of the rest of the documentation.
 
 # themakR 0.1.0
 
