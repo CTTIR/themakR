@@ -48,6 +48,9 @@ test_that("named image aliases follow the page colour mode", {
   expect_match(paste(output, collapse = "\n"),
                "Named logo colour modes and missing-dark fallback passed.",
                fixed = TRUE)
+  expect_match(paste(output, collapse = "\n"),
+               "Dark logo resolves from the not-found page at any depth.",
+               fixed = TRUE)
 })
 
 test_that("theme controls remain usable without browser storage", {
