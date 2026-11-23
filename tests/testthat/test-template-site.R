@@ -127,8 +127,9 @@ contrast_ratio <- function(colour, surface) {
   (max(both) + 0.05) / (min(both) + 0.05)
 }
 
-# The colour each syntax token ends up with in one colour mode: a rule that
-# starts at `body` outranks the highlight theme's own rule for the token.
+# The colour each syntax token ends up with in one colour mode: the
+# template's own rule (scoped to light mode, or starting at `body` in dark
+# mode) outranks the highlight theme's rule for the token.
 syntax_colours <- function(css, dark) {
   rules <- regmatches(css, gregexpr(
     "[^{}]*pre code span[.][a-z]{2}\\s*\\{\\s*color:\\s*#[0-9a-fA-F]{6}",
@@ -140,9 +141,11 @@ syntax_colours <- function(css, dark) {
     selector = trimws(unlist(selectors)),
     colour = rep(colour, lengths(selectors))
   )
-  found <- found[grepl("data-bs-theme=\"?dark", found$selector) == dark, ]
+  light_only <- grepl(":not([data-bs-theme=", found$selector, fixed = TRUE)
+  in_dark <- grepl("data-bs-theme=\"?dark", found$selector) & !light_only
+  own <- light_only | grepl("body pre", found$selector, fixed = TRUE)
   found$token <- sub("^.*span[.]", "", found$selector)
-  found <- found[order(!grepl("body pre", found$selector, fixed = TRUE)), ]
+  found <- found[order(!own), ][in_dark[order(!own)] == dark, ]
   found <- found[!duplicated(found$token), ]
   stats::setNames(found$colour, found$token)
 }
@@ -155,6 +158,14 @@ test_that("syntax colours are legible on the code surfaces", {
     hit <- regmatches(css, regexpr(pattern, css, perl = TRUE))
     sub("^.*(#[0-9a-fA-F]{6})$", "\\1", hit)
   }
+
+  # The light restatements must not apply in dark mode, whatever highlight
+  # theme a site picks there.
+  expect_found(
+    css, "html:not\\(\\[data-bs-theme=\"?dark\"?\\]\\) pre code span\\.kw",
+    fixed = FALSE
+  )
+  expect_false(grepl("[},]\\s*body pre code span[.]", css))
 
   for (dark in c(FALSE, TRUE)) {
     dark_scope <- "\\[data-bs-theme=\"?dark\"?\\]\\s*"

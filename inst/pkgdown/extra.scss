@@ -136,8 +136,11 @@ body pre {
 // carry the printed output of examples (3.97:1 light, 2.94:1 dark), keywords
 // (3.77:1), variables (2.87:1) and alerts (2.59:1). Each is restated in the
 // same hue, mixed towards black (light) or white (dark) until it reaches
-// 4.6:1. `body` outranks the themes' selectors as it does for the surfaces.
-body pre code {
+// 4.6:1. The light restatements are scoped to light mode, so they cannot
+// reach a dark highlight theme that leaves one of these tokens undefined;
+// the scope also outranks the light theme's selectors, as `body` does for
+// the dark ones.
+html:not([data-bs-theme="dark"]) pre code {
   span.an, span.co, span.cv, span.do, span.in, span.re { color: #5f6870; }
   span.at, span.bu, span.cf, span.dt, span.ex, span.kw, span.pp { color: #bd3340; }
   span.va { color: #ad4a07; }

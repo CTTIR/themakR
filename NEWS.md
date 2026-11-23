@@ -10,12 +10,13 @@
 * Below a width of 360 pixels the navbar no longer shows the version label.
   With a long package name the fixed navbar wrapped onto a second row there
   and covered the top of the page.
-* Comments and the printed output of examples, keywords, variables and alerts
-  in code blocks are drawn in darker (light mode) or lighter (dark mode)
-  shades of the same hues. On the code surfaces of the template the colours
-  of the highlight themes fell below the 4.5:1 contrast minimum of the Web
-  Content Accessibility Guidelines 2.1; example output stood at 2.9:1 in dark
-  mode.
+* Code blocks are easier to read. In light mode comments, the printed output
+  of examples, keywords, variables and alerts are drawn in darker shades of
+  the same hues; in dark mode comments and example output are drawn lighter.
+  On the code surfaces of the template these colours of the highlight themes
+  fell below the 4.5:1 contrast minimum of the Web Content Accessibility
+  Guidelines 2.1; example output stood at 2.9:1 in dark mode. The light
+  shades apply in light mode only.
 * An article no longer shows the package hex twice. The branding block that
   vignettes carry for standalone HTML output is hidden where the page heading
   already shows the logo.
