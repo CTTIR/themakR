@@ -86,6 +86,22 @@ test_that("the shared stylesheet compiles into the site bundle", {
   expect_found(css, "(?i)--bs-primary:\\s*#1565c0", fixed = FALSE)
 })
 
+test_that("the version label gives way on the narrowest screens", {
+  css <- demo_site()$css
+
+  # Otherwise a long package name wraps the fixed navbar over the heading.
+  expect_found(
+    css,
+    paste0(
+      "@media\\s*\\(max-width:\\s*359\\.98px\\)\\s*\\{\\s*",
+      "\\.navbar \\.nav-text\\s*\\{\\s*display:\\s*none"
+    ),
+    fixed = FALSE
+  )
+  # The reserved space matches the single-row bar at both logo sizes.
+  expect_found(css, "--themakr-navbar-offset:\\s*80px", fixed = FALSE)
+})
+
 test_that("linked inline code keeps the link colour", {
   site <- demo_site()
 

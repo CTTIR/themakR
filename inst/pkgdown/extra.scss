@@ -94,6 +94,15 @@ html, body { scroll-padding-top: var(--themakr-navbar-offset); }
   :root { --themakr-navbar-offset: 80px; }
 }
 
+// On the narrowest screens a long package name, the version label and the
+// menu button do not fit on one row; the bar would wrap and cover the page
+// heading. The version label gives way there.
+@media (max-width: 359.98px) {
+  .navbar .nav-text {
+    display: none;
+  }
+}
+
 // Active nav item picks up the accent, kept as a quiet tint rather than a fill.
 .nav-item.active .nav-link {
   color: var(--bs-primary);
