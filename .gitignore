@@ -10,3 +10,5 @@ inst/doc/
 *.bak
 *.orig
 *.Rcheck/
+tests/testthat/_problems/
+tests/testthat/testthat-problems.rds
