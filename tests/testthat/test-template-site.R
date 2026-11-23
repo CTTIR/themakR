@@ -114,8 +114,12 @@ test_that("linked inline code keeps the link colour", {
   expect_gt(linked, inline)
 })
 
-# Contrast ratio of two colours given as "#rrggbb" (WCAG 2.1, definition of
-# relative luminance and contrast ratio, https://www.w3.org/TR/WCAG21/).
+# Contrast ratio of two colours given as "#rrggbb". The channel threshold,
+# exponent and weights are those of W3C, Web Content Accessibility Guidelines
+# 2.1, 2018, definition "relative luminance"
+# (https://www.w3.org/TR/WCAG21/#dfn-relative-luminance); the ratio is its
+# definition "contrast ratio"
+# (https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio).
 contrast_ratio <- function(colour, surface) {
   luminance <- function(hex) {
     channel <- grDevices::col2rgb(hex)[, 1L] / 255
