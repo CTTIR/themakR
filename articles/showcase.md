@@ -95,7 +95,7 @@ ggplot(mpg, aes(displ, hwy)) +
 mpg data, with a smoothed trend line that falls and then levels
 off.](showcase_files/figure-html/demo-plot-1.png)
 
-## Math
+## Maths
 
 KaTeX rendering: when a \ne 0, the roots of ax^2 + bx + c = 0 are
 
