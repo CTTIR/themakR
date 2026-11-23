@@ -1,6 +1,8 @@
 # A minimal consumer package whose site is built with the shipped template.
 # The site is built once per test run; every test that needs it calls
-# demo_site(), which skips where a site cannot be built.
+# demo_site(), which skips where a site cannot be built. Pages are rendered
+# with pkgdown::render_page() because pkgdown's home and news builders look
+# the package up on CRAN; nothing here needs network access.
 
 demo_site_cache <- new.env(parent = emptyenv())
 
@@ -25,10 +27,7 @@ demo_site_source <- function(path) {
     c("YEAR: 2026", "COPYRIGHT HOLDER: A. Tester"),
     file.path(path, "LICENSE")
   )
-  writeLines(
-    c("# demoPkg", "", "Linked code: [`mean()`](https://example.org/mean)."),
-    file.path(path, "README.md")
-  )
+  writeLines(c("# demoPkg", "", "A demo."), file.path(path, "README.md"))
   writeLines(
     c("# demoPkg 0.0.1", "", "* First version."),
     file.path(path, "NEWS.md")
@@ -69,16 +68,26 @@ demo_site <- function() {
     .local_envir = testthat::teardown_env()
   )
   src <- demo_site_source(file.path(root, "demoPkg"))
-  withr::local_options(pkgdown.internet = FALSE)
+  page <- list(
+    pagetitle = "Demo page",
+    body = paste0(
+      "<p>Linked code: <a href=\"https://example.org/mean\">",
+      "<code>mean()</code></a>.</p>"
+    )
+  )
   suppressMessages({
     pkg <- pkgdown::as_pkgdown(src)
     pkgdown::init_site(pkg)
-    pkgdown::build_home(pkg, preview = FALSE)
-    # A page one level down, built with the footer wording override.
+    pkgdown::render_page(pkg, "title-body", page, "index.html", quiet = TRUE)
+    # A page one level down, rendered with the footer wording override.
     worded <- pkgdown::as_pkgdown(src, override = list(
       template = list(params = list(part_of = "the demo collection"))
     ))
-    pkgdown::build_news(worded, preview = FALSE)
+    dir.create(file.path(pkg$dst_path, "news"))
+    pkgdown::render_page(
+      worded, "title-body", page, "news/index.html",
+      depth = 1L, quiet = TRUE
+    )
   })
 
   read_page <- function(...) {

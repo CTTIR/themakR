@@ -42,6 +42,11 @@ test_that("a consumer inherits the shared configuration", {
   )
   expect_identical(meta$footer$structure$left, "developed_by")
   expect_identical(meta$footer$structure$right, "built_with")
+  # The custom sidebar section points at the suite, not at one package.
+  universe <- meta$home$sidebar$components$rouniverse
+  expect_identical(universe$title, "R-universe")
+  expect_match(universe$text, "[CTTIR universe](https://cttir.github.io/",
+               fixed = TRUE)
 })
 
 test_that("the template scripts replace pkgdown's defaults in a built site", {
@@ -143,11 +148,4 @@ test_that("the footer names the package and accepts a wording override", {
   # pkgdown's own footer cells are kept either side of the suite line.
   expect_found(site$home, "Developed by A. Tester")
   expect_found(site$home, "Site built with")
-})
-
-test_that("the home sidebar shows the shared R-universe section", {
-  home <- demo_site()$home
-
-  expect_found(home, "R-universe")
-  expect_found(home, ">CTTIR universe</a>")
 })
