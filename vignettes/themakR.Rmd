@@ -252,3 +252,6 @@ The value is inserted as-is (plain text or HTML).
 - Don't copy themakR's CSS into your package — override `primary` (and
   `template.params`) instead, so theme fixes reach every site at once.
 - Don't add your own light-switch configuration; it is already on.
+- Don't set your own `template: theme` or `theme-dark`. The shared stylesheet
+  restates some syntax colours of `github-light` and `github-dark` for
+  contrast, so another highlight theme would end up with mixed colours.
