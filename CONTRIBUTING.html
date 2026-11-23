@@ -25,6 +25,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"></ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json"></form></li>
+<li class="nav-item"><a class="nav-link" href="articles/themakR.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
@@ -67,7 +68,11 @@
 <span><span class="fu">pkgdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">build_site</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </li>
 <li><p>Open a pull request describing what changed and include before/after screenshots in both modes.</p></li>
-</ol><p>Style fixes should go through bslib variables or <code>inst/pkgdown/extra.scss</code> — please don’t hardcode per-package values into the shared template.</p>
+</ol></div>
+<div class="section level2">
+<h2 id="when-pkgdown-changes-its-templates">When pkgdown changes its templates<a class="anchor" aria-label="anchor" href="#when-pkgdown-changes-its-templates"></a></h2>
+<p><code>navbar.html</code>, <code>footer.html</code> and <code>lightswitch.js</code> under <code>inst/pkgdown/BS5/</code> replace pkgdown’s own files. <code>tests/testthat/test-template-upstream.R</code> compares them with the installed pkgdown and fails when a pkgdown release changes one of them; a red check after such a release is the intended signal. To bring the overrides back in step, compare each file with its counterpart in <code>system.file("BS5", package = "pkgdown")</code>, carry the upstream change over while keeping the additions of themakR, update the pkgdown version in <code>inst/COPYRIGHTS</code>, and run the tests again.</p>
+<p>Style fixes should go through bslib variables or <code>inst/pkgdown/extra.scss</code> — please don’t hardcode per-package values into the shared template.</p>
 </div>
 </div>
 

@@ -25,6 +25,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"></ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="nav-link" href="../articles/themakR.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
@@ -51,19 +52,31 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.0" id="themakr-020">themakR 0.2.0<a class="anchor" aria-label="anchor" href="#themakr-020"></a></h2>
-<ul><li><p>Keep light/dark/auto controls and matching artwork usable when browser storage is unavailable or contains an unrecognized theme value.</p></li>
-<li><p>Prepare the package for CRAN: the maintainer address is now <a href="mailto:raban.heller@uni-ulm.de" class="email">raban.heller@uni-ulm.de</a>, <code>Language</code> is declared, the <code>Description</code> is written in full sentences, <code>inst/CITATION</code> takes the version from the installed package, and <code>cran-comments.md</code> is added.</p></li>
-<li><p>Use neutral wording in the README introduction and drop the CRAN status and download badges from the README source and the vignettes.</p></li>
+<ul><li>Linked inline code (a Markdown link around code in backticks) keeps the link colour again. The inline code rule of the shared stylesheet had overridden pkgdown’s own rule, so such links were drawn in the body colour on every site that uses the template.</li>
+<li>The navbar logo now finds its dark artwork on a site’s “page not found” page wherever that page is served; below the site root it used to keep the light logo in dark mode.</li>
+<li>Below a width of 360 pixels the navbar no longer shows the version label. With a long package name the fixed navbar wrapped onto a second row there and covered the top of the page.</li>
+<li>Code blocks are easier to read. In light mode comments, the printed output of examples, keywords, variables and alerts are drawn in darker shades of the same hues; in dark mode comments and example output are drawn lighter. On the code surfaces of the template these colours of the highlight themes fell below the 4.5:1 contrast minimum of the Web Content Accessibility Guidelines 2.1; example output stood at 2.9:1 in dark mode. The light shades apply in light mode only.</li>
+<li>An article no longer shows the package hex twice. The branding block that vignettes carry for standalone HTML output is hidden where the page heading already shows the logo.</li>
+<li>The package description names the blue accent the template has used since 0.1.0 instead of the earlier purple, and the package help page is regenerated from it.</li>
+<li>The README source carries the citation section of the rendered README, and the citation names the current version.</li>
+<li>The adoption guide explains how to link a “Get started” vignette, which the shared navbar does not list. The site of themakR links the guide that way.</li>
+<li>
+<code>DESCRIPTION</code> gains a <code>Copyright</code> field that points to <code>inst/COPYRIGHTS</code>, the notice for the light switch script, navbar template and footer template adapted from pkgdown.</li>
+<li>The figure in the element showcase has alternative text.</li>
+<li>New tests build a minimal consumer site with the template and check the merged configuration, the compiled stylesheet, the navbar, the footer and pages below the site root. Further tests compare the overridden templates and light switch with the installed pkgdown and check that the colour tokens agree across the template files.</li>
+<li>Keep light/dark/auto controls and matching artwork usable when browser storage is unavailable or contains an unrecognised theme value.</li>
+<li>Prepare the package for CRAN: the maintainer address is now <a href="mailto:raban.heller@uni-ulm.de" class="email">raban.heller@uni-ulm.de</a>, <code>Language</code> is declared, the <code>Description</code> is written in full sentences, <code>inst/CITATION</code> takes the version from the installed package, and <code>cran-comments.md</code> is added.</li>
+<li>Use neutral wording in the README introduction and drop the CRAN status and download badges from the README source and the vignettes.</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.0" id="themakr-010">themakR 0.1.0<a class="anchor" aria-label="anchor" href="#themakr-010"></a></h2>
-<ul><li><p>Standardize the named v5 package logo across README, documentation pages and available application headers, with matching light and dark artwork.</p></li>
-<li><p>Initial release: shared pkgdown template for the CTTIR suite.</p></li>
-<li><p>Hugo Coder palette (light <code>#fafafa</code>, dark <code>#212121</code>, blue link accent) with pkgdown’s native light/dark/auto switch.</p></li>
-<li><p>rotemplate-style navbar (hex + brand far left, Search · Reference · Articles · Changelog · GitHub · toggle on the right) and home sidebar (Links · License · Community · Citation · Developers · R-universe).</p></li>
-<li><p>Inter body/heading font, JetBrains Mono code font.</p></li>
-<li><p>Shared suite footer with per-package <code>part_of</code> wording override.</p></li>
-<li><p>Per-package accent override via <code>template.bslib.primary</code>.</p></li>
+<ul><li>Standardize the named v5 package logo across README, documentation pages and available application headers, with matching light and dark artwork.</li>
+<li>Initial release: shared pkgdown template for the CTTIR suite.</li>
+<li>Hugo Coder palette (light <code>#fafafa</code>, dark <code>#212121</code>, blue link accent) with pkgdown’s native light/dark/auto switch.</li>
+<li>rotemplate-style navbar (hex + brand far left, Search · Reference · Articles · Changelog · GitHub · toggle on the right) and home sidebar (Links · License · Community · Citation · Developers · R-universe).</li>
+<li>Inter body/heading font, JetBrains Mono code font.</li>
+<li>Shared suite footer with per-package <code>part_of</code> wording override.</li>
+<li>Per-package accent override via <code>template.bslib.primary</code>.</li>
 </ul></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

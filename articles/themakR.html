@@ -50,6 +50,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
+<li class="active nav-item"><a class="nav-link" href="../articles/themakR.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
@@ -217,6 +218,11 @@ articles. The scoped image styles follow the system colour preference in
 standalone output and the explicit light/dark switch on pkgdown. No
 separate caption, font installation or extra package dependency is
 needed for outlined v5 lettering.</p>
+<p>On a pkgdown page whose heading already shows the package logo,
+themakR hides the block, as it hides the README picture on the home
+page: the hex would otherwise appear twice side by side. The block shows
+wherever that heading logo is absent, and always in standalone
+output.</p>
 <p>Render both standalone and pkgdown output when adding a page. Check
 the visible package name, the two local image paths, the light/dark
 modes, and nested article links. The shared navbar alone does not brand
@@ -264,15 +270,31 @@ package should not point there, drop it in your own
 with no further configuration.</p>
 </div>
 <div class="section level2">
+<h2 id="linking-a-get-started-vignette">Linking a “Get started” vignette<a class="anchor" aria-label="anchor" href="#linking-a-get-started-vignette"></a>
+</h2>
+<p>pkgdown keeps a vignette named after the package
+(<code>vignettes/&lt;package&gt;.Rmd</code>) out of the Articles menu,
+because its own default navbar shows that vignette as “Get started”. The
+shared navbar has no such entry, so the vignette is built but not linked
+from the navbar. To show it, add pkgdown’s <code>intro</code> component
+to the navbar structure in <em>your</em> <code>_pkgdown.yml</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="at">  </span><span class="fu">structure</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span><span class="at">  </span><span class="kw">[]</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">search</span><span class="kw">,</span><span class="at"> intro</span><span class="kw">,</span><span class="at"> reference</span><span class="kw">,</span><span class="at"> articles</span><span class="kw">,</span><span class="at"> news</span><span class="kw">,</span><span class="at"> github</span><span class="kw">,</span><span class="at"> lightswitch</span><span class="kw">]</span></span></code></pre></div>
+<p>themakR’s own site carries this override for the guide you are
+reading. Linking the vignette from the README works as well.</p>
+</div>
+<div class="section level2">
 <h2 id="per-package-accent-override">Per-package accent override<a class="anchor" aria-label="anchor" href="#per-package-accent-override"></a>
 </h2>
 <p>Each package may keep its own distinct accent (for example, the
 border colour of its hex) while sharing everything else. Set bslib’s
 <code>primary</code> in <em>your</em> <code>_pkgdown.yml</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> themakR</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="at">  </span><span class="fu">bslib</span><span class="kw">:</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="at">    </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">"#5E2C8E"</span><span class="co">   # your package's accent (here: the suite purple)</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> themakR</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="at">  </span><span class="fu">bslib</span><span class="kw">:</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">    </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">"#5E2C8E"</span><span class="co">   # your package's accent (here: the suite purple)</span></span></code></pre></div>
 <p>Your <code>_pkgdown.yml</code> is merged over themakR’s, so this wins
 for your site only. Links, the active navbar item, focus rings, and
 blockquote bars follow the new accent automatically; fonts, the toggle,
@@ -286,10 +308,10 @@ best.)</p>
 </h2>
 <p>The footer stamps “<code>&lt;package&gt;</code> is part of the CTTIR
 suite”. To change the suffix wording for one site:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> themakR</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="at">  </span><span class="fu">params</span><span class="kw">:</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">    </span><span class="fu">part_of</span><span class="kw">:</span><span class="at"> </span><span class="st">"the CTTIR clinical tools"</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> themakR</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="at">  </span><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="at">    </span><span class="fu">part_of</span><span class="kw">:</span><span class="at"> </span><span class="st">"the CTTIR clinical tools"</span></span></code></pre></div>
 <p>The value is inserted as-is (plain text or HTML).</p>
 </div>
 <div class="section level2">
@@ -301,6 +323,11 @@ suite”. To change the suffix wording for one site:</p>
 theme fixes reach every site at once.</li>
 <li>Don’t add your own light-switch configuration; it is already
 on.</li>
+<li>Don’t set your own <code>template: theme</code> or
+<code>theme-dark</code>. The shared stylesheet restates some syntax
+colours of <code>github-light</code> and <code>github-dark</code> for
+contrast, so another highlight theme would end up with mixed
+colours.</li>
 </ul>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

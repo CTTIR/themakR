@@ -91,7 +91,9 @@ ggplot(mpg, aes(displ, hwy)) +
   theme_minimal(base_size = 12)
 ```
 
-![](showcase_files/figure-html/demo-plot-1.png)
+![Scatter plot of highway mileage against engine displacement for the
+mpg data, with a smoothed trend line that falls and then levels
+off.](showcase_files/figure-html/demo-plot-1.png)
 
 ## Math
 

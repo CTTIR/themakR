@@ -130,6 +130,11 @@ and the explicit light/dark switch on pkgdown. No separate caption, font
 installation or extra package dependency is needed for outlined v5
 lettering.
 
+On a pkgdown page whose heading already shows the package logo, themakR
+hides the block, as it hides the README picture on the home page: the
+hex would otherwise appear twice side by side. The block shows wherever
+that heading logo is absent, and always in standalone output.
+
 Render both standalone and pkgdown output when adding a page. Check the
 visible package name, the two local image paths, the light/dark modes,
 and nested article links. The shared navbar alone does not brand an
@@ -174,6 +179,25 @@ pkgdown::build_site()
 The light/dark/auto toggle, the house styling, and the footer appear
 with no further configuration.
 
+## Linking a “Get started” vignette
+
+pkgdown keeps a vignette named after the package
+(`vignettes/<package>.Rmd`) out of the Articles menu, because its own
+default navbar shows that vignette as “Get started”. The shared navbar
+has no such entry, so the vignette is built but not linked from the
+navbar. To show it, add pkgdown’s `intro` component to the navbar
+structure in *your* `_pkgdown.yml`:
+
+``` yaml
+navbar:
+  structure:
+    left:  []
+    right: [search, intro, reference, articles, news, github, lightswitch]
+```
+
+themakR’s own site carries this override for the guide you are reading.
+Linking the vignette from the README works as well.
+
 ## Per-package accent override
 
 Each package may keep its own distinct accent (for example, the border
@@ -213,3 +237,7 @@ The value is inserted as-is (plain text or HTML).
 - Don’t copy themakR’s CSS into your package — override `primary` (and
   `template.params`) instead, so theme fixes reach every site at once.
 - Don’t add your own light-switch configuration; it is already on.
+- Don’t set your own `template: theme` or `theme-dark`. The shared
+  stylesheet restates some syntax colours of `github-light` and
+  `github-dark` for contrast, so another highlight theme would end up
+  with mixed colours.

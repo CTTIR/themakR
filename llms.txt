@@ -52,7 +52,7 @@ for a gallery of every styled element in both colour modes.
 If you use this software, please cite it as:
 
 > Heller, R. (2026). *themakR: Shared pkgdown theme for the CTTIR
-> package suite* (Version 0.1.0) \[Computer software\].
+> package suite* (Version 0.2.0) \[Computer software\].
 > <https://github.com/CTTIR/themakR>
 
 ## Use of LLM tools
