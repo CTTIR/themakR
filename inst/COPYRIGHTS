@@ -7,3 +7,14 @@ Unported License: https://creativecommons.org/licenses/by/3.0/
 
 themakR adds guarded theme storage and a per-page fallback. The upstream
 attribution and license notice are preserved in the distributed asset.
+
+The pkgdown/BS5/templates/navbar.html and pkgdown/BS5/templates/footer.html
+templates are adapted from pkgdown 2.2.1:
+https://github.com/r-lib/pkgdown/blob/v2.2.1/inst/BS5/templates/navbar.html
+https://github.com/r-lib/pkgdown/blob/v2.2.1/inst/BS5/templates/footer.html
+
+Copyright 2025 pkgdown authors. These templates are licensed under the MIT
+License: https://github.com/r-lib/pkgdown/blob/v2.2.1/LICENSE.md
+
+themakR adds the navbar logo with its dark alias, the script that swaps it,
+and the suite line of the footer.

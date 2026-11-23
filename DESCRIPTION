@@ -10,8 +10,8 @@ Description: Provides a custom 'pkgdown' template that gives the Computational
     dark colour modes, and consistent navbar, hex, and footer treatment. It is
     not intended for general use outside the CTTIR suite.
 License: MIT + file LICENSE
-Copyright: See file inst/COPYRIGHTS for the adapted 'pkgdown' light switch
-    script.
+Copyright: See file inst/COPYRIGHTS for the light switch script and the
+    navbar and footer templates adapted from 'pkgdown'.
 URL: https://github.com/CTTIR/themakR, https://cttir.github.io/themakR/
 BugReports: https://github.com/CTTIR/themakR/issues
 Encoding: UTF-8
