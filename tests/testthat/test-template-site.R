@@ -114,6 +114,60 @@ test_that("linked inline code keeps the link colour", {
   expect_gt(linked, inline)
 })
 
+# Contrast ratio of two colours given as "#rrggbb" (WCAG 2.1, definition of
+# relative luminance and contrast ratio, https://www.w3.org/TR/WCAG21/).
+contrast_ratio <- function(colour, surface) {
+  luminance <- function(hex) {
+    channel <- grDevices::col2rgb(hex)[, 1L] / 255
+    linear <- ifelse(channel <= 0.03928, channel / 12.92,
+                     ((channel + 0.055) / 1.055)^2.4)
+    sum(c(0.2126, 0.7152, 0.0722) * linear)
+  }
+  both <- c(luminance(colour), luminance(surface))
+  (max(both) + 0.05) / (min(both) + 0.05)
+}
+
+# The colour each syntax token ends up with in one colour mode: a rule that
+# starts at `body` outranks the highlight theme's own rule for the token.
+syntax_colours <- function(css, dark) {
+  rules <- regmatches(css, gregexpr(
+    "[^{}]*pre code span[.][a-z]{2}\\s*\\{\\s*color:\\s*#[0-9a-fA-F]{6}",
+    css, perl = TRUE
+  ))[[1L]]
+  colour <- sub("^.*(#[0-9a-fA-F]{6})$", "\\1", rules)
+  selectors <- strsplit(sub("\\s*\\{.*$", "", rules), ",", fixed = TRUE)
+  found <- data.frame(
+    selector = trimws(unlist(selectors)),
+    colour = rep(colour, lengths(selectors))
+  )
+  found <- found[grepl("data-bs-theme=\"?dark", found$selector) == dark, ]
+  found$token <- sub("^.*span[.]", "", found$selector)
+  found <- found[order(!grepl("body pre", found$selector, fixed = TRUE)), ]
+  found <- found[!duplicated(found$token), ]
+  stats::setNames(found$colour, found$token)
+}
+
+test_that("syntax colours are legible on the code surfaces", {
+  css <- demo_site()$css
+  surface <- function(prefix) {
+    pattern <- paste0(prefix, "body pre\\s*\\{\\s*background-color:\\s*",
+                      "(#[0-9a-fA-F]{6})")
+    hit <- regmatches(css, regexpr(pattern, css, perl = TRUE))
+    sub("^.*(#[0-9a-fA-F]{6})$", "\\1", hit)
+  }
+
+  for (dark in c(FALSE, TRUE)) {
+    dark_scope <- "\\[data-bs-theme=\"?dark\"?\\]\\s*"
+    bg <- surface(if (dark) dark_scope else "(?<!\\] )")
+    colours <- syntax_colours(css, dark)
+    expect_gt(length(colours), 25L)
+    ratios <- vapply(colours, contrast_ratio, numeric(1), surface = bg)
+    # Comments also carry the printed output of every example.
+    expect_true("co" %in% names(ratios))
+    expect_identical(names(ratios)[ratios < 4.5], character())
+  }
+})
+
 test_that("the navbar carries the logo, its dark alias and the light switch", {
   home <- demo_site()$home
 

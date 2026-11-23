@@ -10,6 +10,12 @@
 * Below a width of 360 pixels the navbar no longer shows the version label.
   With a long package name the fixed navbar wrapped onto a second row there
   and covered the top of the page.
+* Comments and the printed output of examples, keywords, variables and alerts
+  in code blocks are drawn in darker (light mode) or lighter (dark mode)
+  shades of the same hues. On the code surfaces of the template the colours
+  of the highlight themes fell below the 4.5:1 contrast minimum of the Web
+  Content Accessibility Guidelines 2.1; example output stood at 2.9:1 in dark
+  mode.
 * The package description names the blue accent the template has used since
   0.1.0 instead of the earlier purple, and the package help page is
   regenerated from it.
