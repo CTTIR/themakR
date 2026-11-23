@@ -110,7 +110,7 @@ knitr::kable(
 
 ## Figure
 
-```{r demo-plot, eval = has_ggplot2, echo = has_ggplot2}
+```{r demo-plot, eval = has_ggplot2, echo = has_ggplot2, fig.alt = "Scatter plot of highway mileage against engine displacement for the mpg data, with a smoothed trend line that falls and then levels off."}
 library(ggplot2)
 ggplot(mpg, aes(displ, hwy)) +
   geom_point(colour = "#1565c0", alpha = 0.7) +
