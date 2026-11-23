@@ -1,9 +1,16 @@
 Package: themakR
 Title: 'pkgdown' Theme for the CTTIR Package Suite
 Version: 0.2.0
-Authors@R:
+Authors@R: c(
     person("R.", "Heller", email = "raban.heller@uni-ulm.de",
-           role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0001-8006-9742"))
+           role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0001-8006-9742")),
+    person("The Bootstrap Authors", role = "cph",
+           comment = "Colour mode script adapted in inst/pkgdown/BS5/assets/lightswitch.js"),
+    person("bslib authors", role = "cph",
+           comment = "pkgdown updates to inst/pkgdown/BS5/assets/lightswitch.js"),
+    person("pkgdown authors", role = "cph",
+           comment = "Templates adapted in inst/pkgdown/BS5/templates/navbar.html and footer.html")
+  )
 Description: Provides a custom 'pkgdown' template that gives the Computational
     Trauma and Tissue Injury Research (CTTIR) family of R packages a shared
     visual identity: a single blue accent, monospace code styling, light and

@@ -50,6 +50,11 @@
   author as R. Heller, as `inst/CITATION` does.
 * The README citation, `CITATION.cff` and `.zenodo.json` use the title of
   `inst/CITATION`, "themakR: pkgdown Theme for the CTTIR Package Suite".
+* `Authors@R` lists the holders of the adapted files as copyright holders:
+  The Bootstrap Authors and the bslib authors for the light switch script, and
+  the pkgdown authors for the navbar and footer templates. `inst/COPYRIGHTS`
+  gives each adapted file with its source, holder, licence and the changes
+  made in themakR, followed by the MIT licence text of pkgdown.
 
 # themakR 0.1.0
 

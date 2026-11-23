@@ -2,6 +2,7 @@ ac
 ax
 blockquote
 Blockquote
+BS
 bslib
 bslib's
 CMD
@@ -11,9 +12,11 @@ CTTIR
 frac
 GWDG
 JetBrains
+js
 KaTeX
 KISSKI
 Lifecycle
+lightswitch
 LLM
 lockups
 monospace
