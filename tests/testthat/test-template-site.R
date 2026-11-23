@@ -168,6 +168,19 @@ test_that("syntax colours are legible on the code surfaces", {
   }
 })
 
+test_that("an article does not repeat the logo of its page heading", {
+  css <- demo_site()$css
+
+  expect_found(
+    css,
+    paste0(
+      "\\.page-header:has\\(img\\.logo\\)\\s*~\\s*\\.cttir-vignette-logo",
+      "\\s*\\{\\s*display:\\s*none"
+    ),
+    fixed = FALSE
+  )
+})
+
 test_that("the navbar carries the logo, its dark alias and the light switch", {
   home <- demo_site()$home
 

@@ -16,6 +16,9 @@
   of the highlight themes fell below the 4.5:1 contrast minimum of the Web
   Content Accessibility Guidelines 2.1; example output stood at 2.9:1 in dark
   mode.
+* An article no longer shows the package hex twice. The branding block that
+  vignettes carry for standalone HTML output is hidden where the page heading
+  already shows the logo.
 * The package description names the blue accent the template has used since
   0.1.0 instead of the earlier purple, and the package help page is
   regenerated from it.

@@ -214,3 +214,10 @@ blockquote {
 .page-header h1 picture.cttir-readme-logo {
   display: none;
 }
+
+// Vignettes carry the same hex in a block of their own for standalone
+// html_vignette output, which does not inherit this template. On a page whose
+// heading already shows pkgdown's logo, that block would repeat it.
+.page-header:has(img.logo) ~ .cttir-vignette-logo {
+  display: none;
+}
