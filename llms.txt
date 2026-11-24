@@ -1,5 +1,8 @@
 # themakR ![themakR logo](reference/figures/logo-with-name.png)
 
+Zenodo DOI reserved for the release: `10.5281/zenodo.21889968` (not yet
+published).
+
 themakR provides the pkgdown template for the
 [CTTIR](https://cttir.github.io/website/) package suite: the Hugo Coder
 palette of the suite site (light `#fafafa` / dark `#212121`, blue link
